@@ -85,7 +85,7 @@ class AgilentPSA(VisaInstrument):
                 self.spec_header.totaltime = answer[9]
                 self.spec_header.averagenbr = answer[10]
             else:
-                raise InstrIOError(cleandoc('''Agilent PSA did not return its
+                raise InstrIOError(cleandoc('''PSA did not return its
                         mode'''))
         else:
             raise '''PSA is not in Spectrum mode'''
