@@ -404,10 +404,10 @@ class AWG(VisaInstrument):
                                   caching_permissions, auto_open)
         self.channels = {}
         self.lock = Lock()
-        
+
     def reopen_connection(self):
         """Clear buffer on connection reseting.
-        
+
         """
         super(AWG, self).reopen_connection()
         self.write('*CLS') # As this does not seem to work poll the output
@@ -441,23 +441,23 @@ class AWG(VisaInstrument):
             self.write("WLIST:WAVEFORM:DELETE '{}'".format(name))
             self.write("WLIST:WAVEFORM:NEW '{}' , {}, INTeger" .format(name,
                                                                looplength))
-# TO DO check that one can transfer a single channel in sequence mode   
+# TO DO understand how this boolean is working
             if self.ask('AWGControl:RMODe?') != 'SEQ':
                 initialized = True
-            
+
         numApresDiese = len('{}'.format(numbyte))
         header = "WLIS:WAV:DATA '{}',0,{},#{}{}".format(name, looplength,
                                                         numApresDiese,
                                                         numbyte)
         self.write('{}{}'.format(header, waveform))
         self.write('*WAI')
-        
+
         return initialized
 
-    @secure_communication()    
+    @secure_communication()
     def clear_sequence(self):
         self.write("SEQuence:LENGth 0")
-      
+
     @secure_communication()
     def set_sequence_pos(self, name, channel, position):
         """sets the sequence index position to waveform name
@@ -466,31 +466,31 @@ class AWG(VisaInstrument):
         if position > current_length:
             self.write("SEQuence:LENGth " + str(position))
         self.write("SEQuence:ELEMent" + str(position) + ":WAVeform" + str(channel) + " " + repr(name))
-    
+
     @secure_communication()
     def set_goto_pos(self, position, goto):
         """sets the goto value at position to goto
         """
         self.write('SEQuence:ELEMent' + str(position) + ':GOTO:STATe 1')
         self.write('SEQuence:ELEMent' + str(position) + ':GOTO:INDex ' + str(goto))
-        
+
     @secure_communication()
     def set_repeat(self,position, repeat):
         self.write('SEQUENCE:ELEMENT' + str(position) + ':LOOP:COUNT ' + str(repeat))
-         
+
     @secure_communication()
     def set_trigger_pos(self, position):
         """sets the waveform at position to wait for trigger
         """
         self.write('SEQuence:ELEMent' + str(position) + ':TWAIT 1')
-    
+
     @instrument_property
     @secure_communication()
     def internal_trigger_period(self):
         """getter for internal trigger period
-        """       
+        """
         return self.ask("TRIGGER:SEQUENCE:TIMER?")
-        
+
     @internal_trigger_period.setter
     @secure_communication()
     def internal_trigger_period(self, value):
@@ -499,18 +499,18 @@ class AWG(VisaInstrument):
         self.write("TRIGGER:SEQUENCE:TIMER " + str(value) +"NS")
 
     @instrument_property
-    @secure_communication()        
+    @secure_communication()
     def internal_trigger(self):
         """getter for trigger internal or external
-        """        
+        """
         ore = self.ask("TRIGGER:SEQUENCE:SOURCE?")
         if ore == 'INT':
             return 'True'
         elif ore == 'EXT':
             return 'False'
         else:
-            raise InstrIOError    
-            
+            raise InstrIOError
+
     @internal_trigger.setter
     @secure_communication()
     def internal_trigger(self, value):

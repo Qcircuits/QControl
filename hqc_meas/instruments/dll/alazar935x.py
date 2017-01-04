@@ -115,7 +115,7 @@ class Alazar935x(DllInstrument):
         """
         pass
 
-    def configure_board(self):
+    def configure_board(self,trigRange,trigLevel):
         board = self._dll.GetBoardBySystemID(1, 1)()
         # TODO: Select clock parameters as required to generate this
         # sample rate
@@ -144,9 +144,7 @@ class Alazar935x(DllInstrument):
 
         # TODO: Select channel B bandwidth limit as required.
         self._dll.SetBWLimit(board, self._dll.CHANNEL_B, 0)
-        # TODO: Select trigger inputs and levels by user.
-        trigLevel = 0.4 # in Volts
-        trigRange = 5 # in Volts (Set in SetExternalTrigger() below)
+        # TODO: Select trigger inputs and levels as required.
         trigCode = int(128 + 127 * trigLevel / trigRange)
         self._dll.SetTriggerOperation(board, self._dll.TRIG_ENGINE_OP_J,
                                       self._dll.TRIG_ENGINE_J,
@@ -159,8 +157,12 @@ class Alazar935x(DllInstrument):
                                       128)
 
         # TODO: Select external trigger parameters as required.
-        self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
+        if trigRange == 5:
+            self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
                                      self._dll.ETR_5V)
+        else:
+            self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
+                                     self._dll.ETR_2p5V)
 
         # TODO: Set trigger delay as required.
         triggerDelay_sec = 0.
@@ -185,7 +187,7 @@ class Alazar935x(DllInstrument):
 
     def get_demod(self, startaftertrig, duration, recordsPerCapture,
                   recordsPerBuffer, timestep, freq, average, NdemodA, NdemodB, NtraceA, NtraceB):
-                      
+
         board = self._dll.GetBoardBySystemID(1, 1)()
 
         # Number of samples per record: must be divisible by 32
@@ -195,7 +197,7 @@ class Alazar935x(DllInstrument):
             samplesPerRecord = int(samplesPerTrace)
         else:
             samplesPerRecord = int((samplesPerTrace)/32 + 1)*32
-            
+
         retCode = self._dll.GetChannelInfo(board)()
         bitsPerSample = self._dll.GetChannelInfo(board)[1]
         if retCode != self._dll.ApiSuccess:
@@ -251,9 +253,9 @@ class Alazar935x(DllInstrument):
             self._dll.AbortCapture()
             raise Exception("Error: Capture timeout. Verify trigger")
             time.sleep(10e-3)
-            
+
         # Preparation of the tables for the demodulation
-            
+
         startSample = []
         samplesPerDemod = []
         samplesPerBlock = []
@@ -261,7 +263,7 @@ class Alazar935x(DllInstrument):
         samplesMissing = []
         data = []
         dataExtended = []
-        
+
         for i in range(NdemodA + NdemodB):
             startSample.append( int(samplesPerSec * startaftertrig[i]) )
             samplesPerDemod.append( int(samplesPerSec * duration[i]) )
@@ -277,14 +279,14 @@ class Alazar935x(DllInstrument):
                     periodsPerBlock += 1
                 samplesPerBlock.append( int(np.minimum(periodsPerBlock * samplesPerSec / freq[i],
                                                       samplesPerDemod[i])) )
-                                                  
+
             NumberOfBlocks.append( np.divide(samplesPerDemod[i], samplesPerBlock[i]) )
             samplesMissing.append( (-samplesPerDemod[i]) % samplesPerBlock[i] )
             # Makes the table that will contain the data
             data.append( np.empty((recordsPerCapture, samplesPerBlock[i])) )
             dataExtended.append( np.zeros((recordsPerBuffer, samplesPerDemod[i] + samplesMissing[i]),
                                           dtype='uint16') )
-                                        
+
         for i in (np.arange(NtraceA + NtraceB) + NdemodA + NdemodB):
             startSample.append( int(samplesPerSec * startaftertrig[i]) )
             samplesPerDemod.append( int(samplesPerSec * duration[i]) )
@@ -314,13 +316,13 @@ class Alazar935x(DllInstrument):
                 dataExtended[i][:,:samplesPerDemod[i]] = dataRaw[(channel_number-1)*recordsPerBuffer:channel_number*recordsPerBuffer,startSample[i]:startSample[i]+samplesPerDemod[i]]
                 dataBlock = np.reshape(dataExtended[i],(recordsPerBuffer,-1,samplesPerBlock[i]))
                 data[i][buffersCompleted*recordsPerBuffer:(buffersCompleted+1)*recordsPerBuffer] = np.sum(dataBlock, axis=1)
-             
+
             for i in (np.arange(NtraceA) + NdemodB + NdemodA):
                 data[i][buffersCompleted*recordsPerBuffer:(buffersCompleted+1)*recordsPerBuffer] = dataRaw[:recordsPerBuffer,startSample[i]:startSample[i]+samplesPerDemod[i]]
-            
+
             for i in (np.arange(NtraceB) + NtraceA + NdemodB + NdemodA):
                 data[i][buffersCompleted*recordsPerBuffer:(buffersCompleted+1)*recordsPerBuffer] = dataRaw[(channel_number-1)*recordsPerBuffer:channel_number*recordsPerBuffer,startSample[i]:startSample[i]+samplesPerDemod[i]]
-             
+
             buffersCompleted += 1
 
             self._dll.PostAsyncBuffer(board, buffer.addr, buffer.size_bytes)
@@ -330,10 +332,10 @@ class Alazar935x(DllInstrument):
         for i in range(bufferCount):
             buffer = buffers[i]
             buffer.__exit__()
-  
-        print time.clock() - start  
 
-        # Normalize the np.sum and convert data into Volts  
+        print time.clock() - start
+
+        # Normalize the np.sum and convert data into Volts
         for i in range(NdemodA + NdemodB):
             normalisation = 1 if samplesMissing[i] else 0
             data[i][:,:samplesPerBlock[i]-samplesMissing[i]] /= NumberOfBlocks[i] + normalisation
@@ -345,7 +347,7 @@ class Alazar935x(DllInstrument):
         # calculate demodulation tables
         coses=[]
         sines=[]
-        for i in range(NdemodA+NdemodB): 
+        for i in range(NdemodA+NdemodB):
             dem = np.arange(samplesPerBlock[i])
             coses.append(np.cos(2. * math.pi * dem * freq[i] / samplesPerSec))
             sines.append(np.sin(2. * math.pi * dem * freq[i] / samplesPerSec))

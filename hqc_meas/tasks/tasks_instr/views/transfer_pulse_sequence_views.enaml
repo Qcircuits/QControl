@@ -14,6 +14,7 @@ from enaml.core.api import Conditional, Include
 from enaml.widgets.api import (GroupBox, Label, Field, ObjectCombo, CheckBox,
                                Notebook, Page, PushButton, Menu, Action,
                                FileDialogEx, Container)
+from hqc_meas.utils.layouts import auto_grid_layout
 
 from inspect import cleandoc
 from textwrap import fill
@@ -190,22 +191,28 @@ enamldef AWGTransferPulseSequenceInterfaceView(Page):
     title = 'AWG specials'
 
     Container:
-        constraints = [hbox(lb, fd, cb)]
+        constraints = [hbox(awgmode,awgmode_val,lb,fd,cb)]
+
+        Label: awgmode:
+            text = 'AWG mode'
+        ObjectCombo: awgmode_val:
+            items << list(interface.get_member('mode').items)
+            selected := interface.mode
+
         Label: lb:
             text = 'Sequence name'
-
         Field: fd:
             placeholder = 'Sequence'
             text := interface.sequence_name
             tool_tip = fc('''If left empty the sequence will be named
                           'Sequence'. In any case the channel name is appended.
                           ex : Sequence_Ch1''')
-
         CheckBox: cb:
             text = 'Select after transfert'
             checked := interface.select_after_transfer
 
 
+
 INTERFACE_VIEW_MAPPING = {'AWGTransferInterface':
                           [AWGTransferPulseSequenceInterfaceView]}
-                          
+

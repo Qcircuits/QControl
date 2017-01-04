@@ -8,37 +8,31 @@
 """
 from hqc_meas.tasks.api import (InstrumentTask)
 from inspect import cleandoc
-from atom.api import (Str,Bool)
+from atom.api import (Str,Enum)
 
 class AWGStartTask(InstrumentTask):
     """Switch the AWG from Continuous to Sequence and vice versa.
-    Start or stop the AWG pulse sequence loop after setting the trigger as required. 
-    Needs to be called after Phase Alazar task (for turning on) or after 
+    Start or stop the AWG pulse sequence loop after setting the trigger as required.
+    Needs to be called after Phase Alazar task (for turning on) or after
     Phase Alazar Task is over (for turning off).
     """
 
     driver_list = ['AWG5014B']
-    
+
     on_off = Str().tag(pref=True)
-    
-    cont = Bool().tag(pref=False)
-    
-    seq = Bool().tag(pref=True)
+
+    mode = Enum('CONTINUOUS', 'TRIGGER', 'GATED','SEQUENCE').tag(pref=True)
 
     def check(self, *args, **kwargs):
         """
         Check that the user entered 0 or 1 and nothing else
         """
         test, traceback = super(AWGStartTask, self).check(*args, **kwargs)
-                                                             
+
         if self.on_off != '0' and self.on_off != '1':
             test = False
             traceback[self.task_path + '/' + self.task_name] = \
                                     cleandoc('''Enter 0 for OFF, 1 for ON''')
-        if self.cont and self.seq:
-            test = False
-            traceback[self.task_path + '/' + self.task_name] = \
-                                    cleandoc('''Cannot select two modes at the same time''')
         return test, traceback
 
     def perform(self):
@@ -47,22 +41,18 @@ class AWGStartTask(InstrumentTask):
         """
         if not self.driver:
             self.start_driver()
-# TO DO add trigger and gated mode and also a viewer with a menu déroulant            
-        if self.cont:
-            self.driver.run_mode = 'CONTINUOUS'
-        elif self.seq:
-            self.driver.run_mode = 'SEQUENCE'
-        
+        self.driver.run_mode = self.mode
+
         running_state = self.driver.running
         if self.on_off == '0':
             if running_state != '2 : Intrument is running':
                 print 'WARNING: AWG already stopped or waiting for a trigger'
             self.driver.running = 'STOP'
-        
+
         if self.on_off == '1':
             if running_state != '0 : Instrument has stopped':
-                print 'WARNING: AWG already running'           
+                print 'WARNING: AWG already running'
             self.driver.running = 'RUN'
-        
-       
+
+
 KNOWN_PY_TASKS = [AWGStartTask]

@@ -115,7 +115,7 @@ class Alazar987x(DllInstrument):
         """
         pass
 
-    def configure_board(self):
+    def configure_board(self,trigRange,trigLevel):
         board = self._dll.GetBoardBySystemID(1,1)()
         # TODO: Select clock parameters as required to generate this
         # sample rate
@@ -145,19 +145,24 @@ class Alazar987x(DllInstrument):
         # TODO: Select channel B bandwidth limit as required.
         self._dll.SetBWLimit(board, self._dll.CHANNEL_B, 0)
         # TODO: Select trigger inputs and levels as required.
+        trigCode = int(128 + 127 * trigLevel / trigRange)
         self._dll.SetTriggerOperation(board, self._dll.TRIG_ENGINE_OP_J,
                                       self._dll.TRIG_ENGINE_J,
                                       self._dll.TRIG_EXTERNAL,
                                       self._dll.TRIGGER_SLOPE_POSITIVE,
-                                      138,
+                                      trigCode,
                                       self._dll.TRIG_ENGINE_K,
                                       self._dll.TRIG_DISABLE,
                                       self._dll.TRIGGER_SLOPE_POSITIVE,
                                       128)
 
         # TODO: Select external trigger parameters as required.
-        self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
+        if trigRange == 5:
+            self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
                                      self._dll.ETR_5V)
+        else:
+            self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
+                                     self._dll.ETR_2p5V)
 
         # TODO: Set trigger delay as required.
         triggerDelay_sec = 0.
@@ -177,10 +182,9 @@ class Alazar987x(DllInstrument):
         # hardware trigger event arrives.
         self._dll.SetTriggerTimeOut(board, 0)
         # Configure AUX I/O connector as required
-        self._dll.ConfigureAuxIO(board, self._dll.AUX_OUT_TRIGGER,
+        self._dll.ConfigureAuxIO(board, self._dll.AUX_OUT_TRIGGER, 0)
 
-                                 0)
-    def configure_board_decim(self,decimation):
+    def configure_board_decim(self,decimation,trigRange,trigLevel):
         board = self._dll.GetBoardBySystemID(1,1)()
         # TODO: Select clock parameters as required to generate this
         # sample rate
@@ -244,7 +248,7 @@ class Alazar987x(DllInstrument):
         # Configure AUX I/O connector as required
         self._dll.ConfigureAuxIO(board, self._dll.AUX_OUT_TRIGGER,
                                  0)
-                                  
+
     def get_demod(self, startaftertrig, duration, recordsPerCapture,
                   recordsPerBuffer, timestep, freq, average, NdemodA, NdemodB, NtraceA, NtraceB):
 
@@ -589,7 +593,7 @@ class Alazar987x(DllInstrument):
             samplesPerRecord = int(samplesPerTrace)
         else:
             samplesPerRecord = int((samplesPerTrace)/32 + 1)*32
-        
+
         retCode = self._dll.GetChannelInfo(board)()
         bitsPerSample = self._dll.GetChannelInfo(board)[1]
         if retCode != self._dll.ApiSuccess:
@@ -732,7 +736,7 @@ class Alazar987x(DllInstrument):
         for i in range(Ndemod):
             answerTypeDemod += [('Phase' + str(i).zfill(zerosDemod), str(data[0].dtype)),
                                 ('Magnitude' + str(i).zfill(zerosDemod), str(data[0].dtype))]
-        
+
         if (average and Npoints == 0.0):
             answerDemod = np.zeros(1, dtype=answerTypeDemod)
         elif average:
@@ -745,17 +749,17 @@ class Alazar987x(DllInstrument):
         for i in np.arange(Ndemod):
             Phasestring = 'Phase' + str(i).zfill(zerosDemod)
             Magstring = 'Magnitude' + str(i).zfill(zerosDemod)
-            
+
             if average and Npoints == 0:
                 data[i] = np.mean(data[i], axis=0)
                 ansAI = 2 * np.mean((data[i]*coses[i]).reshape(1, -1), axis=1)
                 ansAQ = 2 * np.mean((data[i]*sines[i]).reshape(1, -1), axis=1)
                 ansBI = 2 * np.mean((data[i+Ndemod]*coses[i]).reshape(1, -1), axis=1)
                 ansBQ = 2 * np.mean((data[i+Ndemod]*sines[i]).reshape(1, -1), axis=1)
-                
+
                 answerDemod[Phasestring][:1] = np.arctan2((ansAI*ansBQ-ansAQ*ansBI),(ansAI*ansBI+ansAQ*ansBQ))
                 answerDemod[Magstring][:1] = np.sqrt(ansAI**2+ansAQ**2)
-                
+
             elif average:
                 data[i] = data[i].reshape(recordsPerCapture/Npoints,Npoints,samplesPerBlock[i])
                 data[i+Ndemod] = data[i+Ndemod].reshape(recordsPerCapture/Npoints,Npoints,samplesPerBlock[i])
@@ -765,7 +769,7 @@ class Alazar987x(DllInstrument):
                 ansAQ = 2 * np.mean((data[i]*sines[i]).reshape(Npoints,-1), axis=1)
                 ansBI = 2 * np.mean((data[i+Ndemod]*coses[i]).reshape(Npoints,-1), axis=1)
                 ansBQ = 2 * np.mean((data[i+Ndemod]*sines[i]).reshape(Npoints,-1), axis=1)
-                
+
                 answerDemod[Phasestring][:1] = np.arctan2((ansAI*ansBQ-ansAQ*ansBI),(ansAI*ansBI+ansAQ*ansBQ))
                 answerDemod[Magstring][:1] = np.sqrt(ansAI**2+ansAQ**2)
             else:
@@ -773,10 +777,10 @@ class Alazar987x(DllInstrument):
                 ansAQ = 2 * np.mean((data[i]*sines[i]).reshape(recordsPerCapture, 1, -1), axis=2)
                 ansBI = 2 * np.mean((data[i+Ndemod]*coses[i]).reshape(recordsPerCapture, 1, -1), axis=2)
                 ansBQ = 2 * np.mean((data[i+Ndemod]*sines[i]).reshape(recordsPerCapture, 1, -1), axis=2)
-                
+
                 answerDemod[Phasestring][:, :1] = np.arctan2((ansAI*ansBQ-ansAQ*ansBI),(ansAI*ansBI+ansAQ*ansBQ))
                 answerDemod[Magstring][:, :1] = np.sqrt(ansAI**2+ansAQ**2)
 
         return answerDemod
-        
+
 DRIVERS = {'Alazar987x': Alazar987x}

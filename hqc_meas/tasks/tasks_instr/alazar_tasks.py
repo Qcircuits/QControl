@@ -7,7 +7,7 @@
 """
 
 """
-from atom.api import (Str, Bool, set_default)
+from atom.api import (Str, Bool, Enum, set_default)
 from inspect import cleandoc
 import numpy as np
 
@@ -19,27 +19,27 @@ class DemodAlazarTask(InstrumentTask):
         Can also get raw or averaged traces of the signal.
     """
     freq = Str('40').tag(pref=True)
-    
+
     freqB = Str('40').tag(pref=True)
- 
+
     timeaftertrig = Str('0').tag(pref=True)
-    
+
     timeaftertrigB = Str('0').tag(pref=True)
- 
+
     timestep = Str('0').tag(pref=True)
 
     timestepB = Str('0').tag(pref=True)
 
     tracetimeaftertrig = Str('0').tag(pref=True)
-    
+
     tracetimeaftertrigB = Str('0').tag(pref=True)
-    
+
     duration = Str('1000').tag(pref=True)
-    
+
     durationB = Str('0').tag(pref=True)
-    
+
     traceduration = Str('0').tag(pref=True)
-    
+
     tracedurationB = Str('0').tag(pref=True)
 
     tracesbuffer = Str('20').tag(pref=True)
@@ -49,10 +49,15 @@ class DemodAlazarTask(InstrumentTask):
     average = Bool(True).tag(pref=True)
 
     IQtracemode = Bool(False).tag(pref=True)
+
+    trigrange = Enum('2.5V','5V').tag(pref=True)
+
+    triglevel = Str('0.3').tag(pref=True)
+
     driver_list = ['Alazar935x','Alazar987x']
 
     task_database_entries = set_default({'Demod': {}, 'Trace': {}})
-    
+
     def format_string(self, string, factor, n):
         s = self.format_and_eval_string(string)
         if isinstance(s, list) or isinstance(s, tuple) or isinstance(s, np.ndarray):
@@ -71,7 +76,7 @@ class DemodAlazarTask(InstrumentTask):
             test = False
             traceback[self.task_path + '/' + self.task_name + '-get_demod'] = \
                 cleandoc('''The number of traces must be an integer multiple of the number of traces per buffer.''')
-                
+
         if not (self.format_and_eval_string(self.tracesnumber) >= 1000):
             test = False
             traceback[self.task_path + '/' + self.task_name + '-get_demod'] = \
@@ -108,7 +113,7 @@ class DemodAlazarTask(InstrumentTask):
         freq = self.format_string(self.freq, 10**6, len(time))
         freqB = self.format_string(self.freqB, 10**6, len(timeB))
         samplesPerSec = 500000000.0
-                
+
         if 0 in duration:
             duration = []
             timestep = []
@@ -117,7 +122,7 @@ class DemodAlazarTask(InstrumentTask):
             durationB = []
             timestepB = []
             freqB = []
-        
+
         for d, ts in zip(duration+durationB, timestep+timestepB):
             if ts and np.mod(int(samplesPerSec*d), int(samplesPerSec*ts)):
                 test = False
@@ -129,7 +134,7 @@ class DemodAlazarTask(InstrumentTask):
                 test = False
                 traceback[self.task_path + '/' + self.task_name + '-get_demod'] = \
                    cleandoc('''The "IQ time step" does not cover an integer number of demodulation periods.''')
-        
+
         return test, traceback
 
     def perform(self):
@@ -141,7 +146,14 @@ class DemodAlazarTask(InstrumentTask):
         if self.driver.owner != self.task_name:
             self.driver.owner = self.task_name
 
-        self.driver.configure_board()
+        if self.trigrange == '5V':
+            trigrange = 5
+        else:
+            trigrange = 2.5
+
+        triglevel = self.format_string(self.triglevel)
+
+        self.driver.configure_board(trigrange,triglevel)
 
         recordsPerCapture = self.format_and_eval_string(self.tracesnumber)
         recordsPerBuffer = int(self.format_and_eval_string(self.tracesbuffer))
@@ -175,7 +187,7 @@ class DemodAlazarTask(InstrumentTask):
             NtraceB = 0
             tracetimeB = []
             tracedurationB = []
-            
+
         startaftertrig = timeA + timeB + tracetimeA + tracetimeB
         duration = durationA + durationB + tracedurationA + tracedurationB
 
@@ -185,12 +197,12 @@ class DemodAlazarTask(InstrumentTask):
         freqA = self.format_string(self.freq, 10**6, NdemodA)
         freqB = self.format_string(self.freqB, 10**6, NdemodB)
         freq = freqA + freqB
-        
+
         answerDemod, answerTrace = self.driver.get_demod(startaftertrig, duration,
                                        recordsPerCapture, recordsPerBuffer,
                                        timestep, freq, self.average,
                                        NdemodA, NdemodB, NtraceA, NtraceB)
-                                              
+
         self.write_in_database('Demod', answerDemod)
         self.write_in_database('Trace', answerTrace)
 
@@ -207,6 +219,10 @@ class TracesAlazarTask(InstrumentTask):
     tracesbuffer = Str().tag(pref=True)
 
     average = Bool(True).tag(pref=True)
+
+    trigrange = Enum('2.5V','5V').tag(pref=True)
+
+    triglevel = Str('0.3').tag(pref=True)
 
     driver_list = ['Alazar935x','Alazar987x']
 
@@ -236,7 +252,14 @@ class TracesAlazarTask(InstrumentTask):
         if self.driver.owner != self.task_name:
             self.driver.owner = self.task_name
 
-        self.driver.configure_board()
+        if self.trigrange == '5V':
+            trigrange = 5
+        else:
+            trigrange = 2.5
+
+        triglevel = self.format_string(self.triglevel)
+
+        self.driver.configure_board(trigrange,triglevel)
 
         recordsPerCapture = int(max(1000,
                             self.format_and_eval_string(self.tracesnumber)))
@@ -251,33 +274,37 @@ class TracesAlazarTask(InstrumentTask):
         traceA, traceB = answer
         self.write_in_database('traceA', traceA)
         self.write_in_database('traceB', traceB)
-        
-        
+
+
 class PhaseAlazarTask(InstrumentTask):
     """ Get the phase (compared to a reference) and magnitude of the signal
     """
     freq = Str('50').tag(pref=True)
- 
+
     timeaftertrig = Str('0').tag(pref=True)
-        
+
     duration = Str('1000').tag(pref=True)
- 
+
     tracesbuffer = Str('100').tag(pref=True)
 
     tracesnumber = Str('1000').tag(pref=True)
 
     average = Bool(True).tag(pref=True)
-    
+
     Npoints = Str('0').tag(pref=True)
-    
+
     decimation = Str('1').tag(pref=True)
-    
+
+    trigrange = Enum('2.5V','5V').tag(pref=True)
+
+    triglevel = Str('0.3').tag(pref=True)
+
     driver_list = ['Alazar987x']
-    
+
     parallel = set_default({'activated': True, 'pool': 'acq'})
 
     task_database_entries = set_default({'Demod': {}})
-    
+
     def format_string(self, string, factor, n):
         s = self.format_and_eval_string(string)
         if isinstance(s, list) or isinstance(s, tuple) or isinstance(s, np.ndarray):
@@ -311,16 +338,16 @@ class PhaseAlazarTask(InstrumentTask):
             test = False
             traceback[self.task_path + '/' + self.task_name + '-get_demod'] = \
                            cleandoc('''All measurements are disabled.''')
-                           
+
         if self.Npoints and not self.average:
             test = False
             traceback[self.task_path + '/' + self.task_name + '-get_demod'] = \
                            cleandoc('''Average needs to be set ON to average over different experiments''')
-        
+
         if decimation not in (1,2,4) and decimation % 10 !=0:
             test = False
             traceback[self.task_path + '/' + self.task_name + '-get_demod'] = \
-                           cleandoc('''Decimation needs to be 1,2,4 or a multiple of 10 up to 100000''')     
+                           cleandoc('''Decimation needs to be 1,2,4 or a multiple of 10 up to 100000''')
 
 
         return test, traceback
@@ -335,7 +362,15 @@ class PhaseAlazarTask(InstrumentTask):
             self.driver.owner = self.task_name
 
         decimation = int(self.format_and_eval_string(self.decimation))
-        self.driver.configure_board_decim(decimation)
+
+        if self.trigrange == '5V':
+            trigrange = 5
+        else:
+            trigrange = 2.5
+
+        triglevel = self.format_string(self.triglevel)
+
+        self.driver.configure_board_decim(decimation,trigrange,triglevel)
 
         numberPoints = self.format_and_eval_string(self.Npoints)
         recordsPerCapture = self.format_and_eval_string(self.tracesnumber)
@@ -346,17 +381,17 @@ class PhaseAlazarTask(InstrumentTask):
         duration = self.format_string(self.duration, 10**-9, 1)
 
         Ndemod = len(duration)
-            
+
         startaftertrig = time
         duration = duration
-        
+
         freq = self.format_string(self.freq, 10**6, Ndemod)
 
         answerDemod = self.driver.get_phase(startaftertrig, duration,
                                        recordsTotal, recordsPerBuffer,
-                                       freq, self.average, Ndemod, 
+                                       freq, self.average, Ndemod,
                                        numberPoints, decimation)
-                                              
+
         self.write_in_database('Demod', answerDemod)
 
 KNOWN_PY_TASKS = [DemodAlazarTask, TracesAlazarTask, PhaseAlazarTask]

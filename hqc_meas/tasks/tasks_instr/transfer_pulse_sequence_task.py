@@ -8,7 +8,7 @@
 """
 from traceback import format_exc
 from inspect import cleandoc
-from atom.api import (Value, Str, Bool, Unicode, Dict)
+from atom.api import (Value, Str, Bool, Unicode, Dict, Enum)
 
 from hqc_meas.tasks.api import (InstrumentTask, InterfaceableTaskMixin,
                                 InstrTaskInterface)
@@ -143,6 +143,8 @@ class AWGTransferInterface(InstrTaskInterface):
     #: execution after transfert.
     select_after_transfer = Bool(True).tag(pref=True)
 
+    mode = Enum('CONTINUOUS', 'TRIGGER', 'GATED','SEQUENCE').tag(pref=True)
+
     driver_list = ['AWG5014B']
 
     has_view = True
@@ -156,9 +158,7 @@ class AWGTransferInterface(InstrTaskInterface):
         task = self.task
         if not task.driver:
             task.start_driver()
-
-# TO DO we need to remove this line and let the user chose the mode
-        task.driver.run_mode = 'CONTINUOUS'
+        self.driver.run_mode = self.mode
 
         seq_name = task.format_string(self.sequence_name) if self.sequence_name else 'Sequence'
         res, seqs = task.compile_sequence()
