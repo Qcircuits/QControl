@@ -14,7 +14,7 @@ This module defines drivers for agilent PNA.
 
 """
 """
-TESTING SMARTGIT WORKFLOO
+TESTING SMARTGIT WORKFLOW
 """
 import logging
 from inspect import cleandoc
