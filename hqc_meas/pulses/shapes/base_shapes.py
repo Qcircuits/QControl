@@ -213,7 +213,7 @@ class GaussianShape(AbstractShape):
             Amplitude of the pulse.
 
         """
-		return self._amplitude*np.exp(-np.square(time-(time[0]+time[-1])/2)/(2*self._width**2))
+        return self._amplitude*np.exp(-np.square(time-(time[0]+time[-1])/2)/(2*self._width**2))
 
     # --- Private API ---------------------------------------------------------
 
