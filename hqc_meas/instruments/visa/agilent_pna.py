@@ -13,9 +13,6 @@ This module defines drivers for agilent PNA.
     AgilentPNA
 
 """
-"""
-TESTING SMARTGIT WORKFLOW -- 260
-"""
 import logging
 from inspect import cleandoc
 import numpy as np
