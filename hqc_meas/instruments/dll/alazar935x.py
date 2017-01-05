@@ -162,7 +162,7 @@ class Alazar935x(DllInstrument):
                                      self._dll.ETR_5V)
         else:
             self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
-                                     self._dll.ETR_2p5V)
+                                     self._dll.ETR_2V5)
 
         # TODO: Set trigger delay as required.
         triggerDelay_sec = 0.

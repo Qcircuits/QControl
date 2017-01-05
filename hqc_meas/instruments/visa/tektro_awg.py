@@ -441,9 +441,7 @@ class AWG(VisaInstrument):
             self.write("WLIST:WAVEFORM:DELETE '{}'".format(name))
             self.write("WLIST:WAVEFORM:NEW '{}' , {}, INTeger" .format(name,
                                                                looplength))
-# TO DO understand how this boolean is working
-            if self.ask('AWGControl:RMODe?') != 'SEQ':
-                initialized = True
+            initialized = True
 
         numApresDiese = len('{}'.format(numbyte))
         header = "WLIS:WAV:DATA '{}',0,{},#{}{}".format(name, looplength,

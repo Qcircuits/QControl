@@ -151,7 +151,7 @@ class DemodAlazarTask(InstrumentTask):
         else:
             trigrange = 2.5
 
-        triglevel = self.format_string(self.triglevel)
+        triglevel = self.format_and_eval_string(self.triglevel)
 
         self.driver.configure_board(trigrange,triglevel)
 
@@ -257,7 +257,7 @@ class TracesAlazarTask(InstrumentTask):
         else:
             trigrange = 2.5
 
-        triglevel = self.format_string(self.triglevel)
+        triglevel = self.format_and_eval_string(self.triglevel)
 
         self.driver.configure_board(trigrange,triglevel)
 
@@ -368,7 +368,7 @@ class PhaseAlazarTask(InstrumentTask):
         else:
             trigrange = 2.5
 
-        triglevel = self.format_string(self.triglevel)
+        triglevel = self.format_and_eval_string(self.triglevel)
 
         self.driver.configure_board_decim(decimation,trigrange,triglevel)
 

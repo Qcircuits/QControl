@@ -158,7 +158,7 @@ class AWGTransferInterface(InstrTaskInterface):
         task = self.task
         if not task.driver:
             task.start_driver()
-        self.driver.run_mode = self.mode
+        task.driver.run_mode = self.mode
 
         seq_name = task.format_string(self.sequence_name) if self.sequence_name else 'Sequence'
         res, seqs = task.compile_sequence()
@@ -166,11 +166,16 @@ class AWGTransferInterface(InstrTaskInterface):
             mess = 'Failed to compile the pulse sequence: missing {}, errs {}'
             raise RuntimeError(mess.format(*seqs))
 
+        #initialized = self.initialized
         initialized = self.initialized
+        #self.initialized = False
+        print 'before loop: %s' %str(initialized)
         for ch_id in task.driver.defined_channels:
             if ch_id in seqs:
                 self.initialized = task.driver.to_send(seq_name + '_Ch{}'.format(ch_id),
                                     seqs[ch_id], initialized)
+                #self.initialized = False              
+                print self.initialized
 
         if self.select_after_transfer and (not initialized):
             for ch_id in task.driver.defined_channels:
