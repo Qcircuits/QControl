@@ -280,7 +280,8 @@ class Alazar987x(DllInstrument):
         bitsPerSample = 8
         code = (1 << (bitsPerSample - 1)) - 0.5
 
-        bufferCount = int(round(recordsPerCapture / recordsPerBuffer))
+#        bufferCount = int(round(recordsPerCapture / recordsPerBuffer))
+        bufferCount = 4
         buffers = []
         for i in range(bufferCount):
             buffers.append(DMABuffer(bytesPerSample, bytesPerBuffer))
@@ -612,7 +613,8 @@ class Alazar987x(DllInstrument):
         bitsPerSample = 8
         code = (1 << (bitsPerSample - 1)) - 0.5
 
-        bufferCount = int(round(recordsPerCapture / recordsPerBuffer))
+#        bufferCount = int(round(recordsPerCapture / recordsPerBuffer))
+        bufferCount = 4
         buffers = []
         for i in range(bufferCount):
             buffers.append(DMABuffer(bytesPerSample, bytesPerBuffer))
