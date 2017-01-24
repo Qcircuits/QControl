@@ -405,3 +405,627 @@ ValueError: NumPy boolean array indexing assignment cannot assign 0 input values
 2017-01-24 14:51:26,737 | MainProcess | INFO | Measure  processed, status : COMPLETED
 2017-01-24 14:51:26,737 | MainProcess | INFO | Stopping measure .
 2017-01-24 14:51:27,740 | MeasureProcess | INFO | Process shuting down
+2017-01-24 15:12:52,306 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:12:52,306 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_notebook.py", line 503, in on_current_changed
+2017-01-24 15:12:52,308 | MainProcess | CRITICAL | self.declaration.selected_tab = name
+2017-01-24 15:12:52,308 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:12:52,308 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:12:52,308 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:12:52,309 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:12:52,309 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:12:52,309 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:12:52,309 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 314, in <module>
+2017-01-24 15:12:52,312 | MainProcess | CRITICAL | _internal.selected_editor = ed
+2017-01-24 15:12:52,312 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 216, in _observe_selected_editor
+2017-01-24 15:12:52,312 | MainProcess | CRITICAL | change['oldvalue'].unselected = True
+2017-01-24 15:12:52,313 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:12:52,313 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:12:52,313 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:12:52,313 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:12:52,313 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:12:52,315 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:12:52,315 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor.enaml", line 283, in <module>
+2017-01-24 15:12:52,316 | MainProcess | CRITICAL | pool_model.unbind_observers()
+2017-01-24 15:12:52,318 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 38, in unbind_observers
+2017-01-24 15:12:52,318 | MainProcess | CRITICAL | self._unbind_observers(self.root, Counter())
+2017-01-24 15:12:52,318 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 78, in _unbind_observers
+2017-01-24 15:12:52,318 | MainProcess | CRITICAL | self._unbind_observers(child, counter)
+2017-01-24 15:12:52,318 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 84, in _unbind_observers
+2017-01-24 15:12:52,318 | MainProcess | CRITICAL | pool = parallel['pool']
+2017-01-24 15:12:52,319 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\atom\dict.py", line 116, in __getitem__
+2017-01-24 15:12:52,319 | MainProcess | CRITICAL | return self._data[key]
+2017-01-24 15:12:52,319 | MainProcess | CRITICAL | KeyError
+2017-01-24 15:12:52,319 | MainProcess | CRITICAL | :
+2017-01-24 15:12:52,319 | MainProcess | CRITICAL | 'pool'
+2017-01-24 15:12:53,401 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:12:53,401 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_notebook.py", line 503, in on_current_changed
+2017-01-24 15:12:53,401 | MainProcess | CRITICAL | self.declaration.selected_tab = name
+2017-01-24 15:12:53,401 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:12:53,403 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:12:53,403 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:12:53,403 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:12:53,403 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:12:53,403 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:12:53,403 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 314, in <module>
+2017-01-24 15:12:53,404 | MainProcess | CRITICAL | _internal.selected_editor = ed
+2017-01-24 15:12:53,404 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 227, in _observe_selected_editor
+2017-01-24 15:12:53,404 | MainProcess | CRITICAL | editor.selected = True
+2017-01-24 15:12:53,404 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:12:53,404 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:12:53,404 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:12:53,404 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:12:53,404 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:12:53,405 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:12:53,405 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor.enaml", line 279, in <module>
+2017-01-24 15:12:53,405 | MainProcess | CRITICAL | pool_model.bind_observers()
+2017-01-24 15:12:53,405 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 29, in bind_observers
+2017-01-24 15:12:53,405 | MainProcess | CRITICAL | self._bind_observers(self.root, counter)
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 51, in _bind_observers
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | self._bind_observers(child, counter)
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 57, in _bind_observers
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | pool = parallel['pool']
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\atom\dict.py", line 116, in __getitem__
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | return self._data[key]
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | KeyError
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | :
+2017-01-24 15:12:53,407 | MainProcess | CRITICAL | 'pool'
+2017-01-24 15:12:54,891 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:12:54,891 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_notebook.py", line 503, in on_current_changed
+2017-01-24 15:12:54,891 | MainProcess | CRITICAL | self.declaration.selected_tab = name
+2017-01-24 15:12:54,891 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:12:54,891 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:12:54,891 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:12:54,891 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:12:54,891 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:12:54,892 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:12:54,892 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 314, in <module>
+2017-01-24 15:12:54,892 | MainProcess | CRITICAL | _internal.selected_editor = ed
+2017-01-24 15:12:54,892 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 216, in _observe_selected_editor
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | change['oldvalue'].unselected = True
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor.enaml", line 283, in <module>
+2017-01-24 15:12:54,894 | MainProcess | CRITICAL | pool_model.unbind_observers()
+2017-01-24 15:12:54,895 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 38, in unbind_observers
+2017-01-24 15:12:54,895 | MainProcess | CRITICAL | self._unbind_observers(self.root, Counter())
+2017-01-24 15:12:54,895 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 78, in _unbind_observers
+2017-01-24 15:12:54,895 | MainProcess | CRITICAL | self._unbind_observers(child, counter)
+2017-01-24 15:12:54,895 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 84, in _unbind_observers
+2017-01-24 15:12:54,895 | MainProcess | CRITICAL | pool = parallel['pool']
+2017-01-24 15:12:54,897 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\atom\dict.py", line 116, in __getitem__
+2017-01-24 15:12:54,897 | MainProcess | CRITICAL | return self._data[key]
+2017-01-24 15:12:54,897 | MainProcess | CRITICAL | KeyError
+2017-01-24 15:12:54,897 | MainProcess | CRITICAL | :
+2017-01-24 15:12:54,897 | MainProcess | CRITICAL | 'pool'
+2017-01-24 15:14:17,312 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:14:17,312 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_notebook.py", line 503, in on_current_changed
+2017-01-24 15:14:17,312 | MainProcess | CRITICAL | self.declaration.selected_tab = name
+2017-01-24 15:14:17,312 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:14:17,312 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:14:17,313 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:14:17,313 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:14:17,313 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:14:17,313 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:14:17,313 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 314, in <module>
+2017-01-24 15:14:17,315 | MainProcess | CRITICAL | _internal.selected_editor = ed
+2017-01-24 15:14:17,315 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 216, in _observe_selected_editor
+2017-01-24 15:14:17,315 | MainProcess | CRITICAL | change['oldvalue'].unselected = True
+2017-01-24 15:14:17,315 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:14:17,315 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:14:17,315 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:14:17,315 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:14:17,315 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:14:17,316 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:14:17,316 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor.enaml", line 283, in <module>
+2017-01-24 15:14:17,316 | MainProcess | CRITICAL | pool_model.unbind_observers()
+2017-01-24 15:14:17,316 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 38, in unbind_observers
+2017-01-24 15:14:17,316 | MainProcess | CRITICAL | self._unbind_observers(self.root, Counter())
+2017-01-24 15:14:17,316 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 78, in _unbind_observers
+2017-01-24 15:14:17,318 | MainProcess | CRITICAL | self._unbind_observers(child, counter)
+2017-01-24 15:14:17,318 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 84, in _unbind_observers
+2017-01-24 15:14:17,318 | MainProcess | CRITICAL | pool = parallel['pool']
+2017-01-24 15:14:17,318 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\atom\dict.py", line 116, in __getitem__
+2017-01-24 15:14:17,318 | MainProcess | CRITICAL | return self._data[key]
+2017-01-24 15:14:17,319 | MainProcess | CRITICAL | KeyError
+2017-01-24 15:14:17,319 | MainProcess | CRITICAL | :
+2017-01-24 15:14:17,319 | MainProcess | CRITICAL | 'pool'
+2017-01-24 15:14:19,667 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:14:19,667 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_notebook.py", line 503, in on_current_changed
+2017-01-24 15:14:19,668 | MainProcess | CRITICAL | self.declaration.selected_tab = name
+2017-01-24 15:14:19,668 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:14:19,668 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:14:19,668 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:14:19,670 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:14:19,670 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:14:19,670 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:14:19,670 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 314, in <module>
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | _internal.selected_editor = ed
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 227, in _observe_selected_editor
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | editor.selected = True
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:14:19,671 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor.enaml", line 279, in <module>
+2017-01-24 15:14:19,673 | MainProcess | CRITICAL | pool_model.bind_observers()
+2017-01-24 15:14:19,673 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 29, in bind_observers
+2017-01-24 15:14:19,673 | MainProcess | CRITICAL | self._bind_observers(self.root, counter)
+2017-01-24 15:14:19,673 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 51, in _bind_observers
+2017-01-24 15:14:19,673 | MainProcess | CRITICAL | self._bind_observers(child, counter)
+2017-01-24 15:14:19,673 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 57, in _bind_observers
+2017-01-24 15:14:19,674 | MainProcess | CRITICAL | pool = parallel['pool']
+2017-01-24 15:14:19,674 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\atom\dict.py", line 116, in __getitem__
+2017-01-24 15:14:19,674 | MainProcess | CRITICAL | return self._data[key]
+2017-01-24 15:14:19,674 | MainProcess | CRITICAL | KeyError
+2017-01-24 15:14:19,674 | MainProcess | CRITICAL | :
+2017-01-24 15:14:19,674 | MainProcess | CRITICAL | 'pool'
+2017-01-24 15:14:29,089 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:14:29,089 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_notebook.py", line 503, in on_current_changed
+2017-01-24 15:14:29,091 | MainProcess | CRITICAL | self.declaration.selected_tab = name
+2017-01-24 15:14:29,091 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:14:29,091 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:14:29,091 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:14:29,092 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:14:29,092 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:14:29,092 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:14:29,092 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 314, in <module>
+2017-01-24 15:14:29,092 | MainProcess | CRITICAL | _internal.selected_editor = ed
+2017-01-24 15:14:29,092 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 216, in _observe_selected_editor
+2017-01-24 15:14:29,092 | MainProcess | CRITICAL | change['oldvalue'].unselected = True
+2017-01-24 15:14:29,094 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:14:29,094 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:14:29,094 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:14:29,094 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:14:29,094 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor.enaml", line 283, in <module>
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | pool_model.unbind_observers()
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 38, in unbind_observers
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | self._unbind_observers(self.root, Counter())
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 78, in _unbind_observers
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | self._unbind_observers(child, counter)
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\editors\execution_editor\editor_model.py", line 84, in _unbind_observers
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | pool = parallel['pool']
+2017-01-24 15:14:29,095 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\atom\dict.py", line 116, in __getitem__
+2017-01-24 15:14:29,096 | MainProcess | CRITICAL | return self._data[key]
+2017-01-24 15:14:29,096 | MainProcess | CRITICAL | KeyError
+2017-01-24 15:14:29,096 | MainProcess | CRITICAL | :
+2017-01-24 15:14:29,096 | MainProcess | CRITICAL | 'pool'
+2017-01-24 15:15:48,808 | MainProcess | INFO | Invalid pref path
+2017-01-24 15:15:51,891 | MainProcess | INFO | Log system started.
+2017-01-24 15:49:57,615 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 15:49:57,704 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 15:49:57,704 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 15:49:57,704 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 15:49:57,717 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 15:50:09,931 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:50:09,931 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\q_deferred_caller.py", line 42, in customEvent
+2017-01-24 15:50:09,931 | MainProcess | CRITICAL | event.callback(*event.args, **event.kwargs)
+2017-01-24 15:50:09,931 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\workbench\ui\workbench_menus.enaml", line 24, in invoke_action
+2017-01-24 15:50:09,943 | MainProcess | CRITICAL | core.invoke_command(item.command, item.parameters, item)
+2017-01-24 15:50:09,944 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\workbench\core\core_plugin.py", line 80, in invoke_command
+2017-01-24 15:50:09,944 | MainProcess | CRITICAL | return command.handler(event)
+2017-01-24 15:50:09,944 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\utils\preferences\manifest.enaml", line 46, in load_preferences
+2017-01-24 15:50:09,947 | MainProcess | CRITICAL | name_filters=['*.ini'])
+2017-01-24 15:50:09,947 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\widgets\file_dialog_ex.py", line 130, in get_open_file_name
+2017-01-24 15:50:09,947 | MainProcess | CRITICAL | dialog = FileDialogEx(parent, **kwargs)
+2017-01-24 15:50:09,947 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\object.py", line 98, in __init__
+2017-01-24 15:50:09,947 | MainProcess | CRITICAL | super(Object, self).__init__(**kwargs)
+2017-01-24 15:50:09,947 | MainProcess | CRITICAL | TypeError
+2017-01-24 15:50:09,947 | MainProcess | CRITICAL | :
+2017-01-24 15:50:09,947 | MainProcess | CRITICAL | The 'current_path' member on the 'FileDialogEx' object must be of type 'str'. Got object of type 'NoneType' instead.
+2017-01-24 15:50:24,819 | MainProcess | INFO | Sequence correctly loaded from file.
+2017-01-24 15:51:16,086 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:51:16,088 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 15:51:16,088 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 15:51:16,088 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:51:16,088 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:51:16,088 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:51:16,088 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:51:16,088 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:51:16,088 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:51:16,089 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 396, in <module>
+2017-01-24 15:51:16,089 | MainProcess | CRITICAL | workspace.enqueue_measure(measure)
+2017-01-24 15:51:16,089 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 240, in enqueue_measure
+2017-01-24 15:51:16,091 | MainProcess | CRITICAL | test_instr=test_instrs)
+2017-01-24 15:51:16,091 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 178, in run_checks
+2017-01-24 15:51:16,091 | MainProcess | CRITICAL | check, errors = self.root_task.check(test_instr=test_instr)
+2017-01-24 15:51:16,092 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1361, in check
+2017-01-24 15:51:16,094 | MainProcess | CRITICAL | check = super(RootTask, self).check(*args, **kwargs)
+2017-01-24 15:51:16,095 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 580, in check
+2017-01-24 15:51:16,095 | MainProcess | CRITICAL | check = aux.check(*args, **kwargs)
+2017-01-24 15:51:16,095 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 76, in check
+2017-01-24 15:51:16,095 | MainProcess | CRITICAL | loop_points = np.array(self.format_and_eval_string(self.loop_points))
+2017-01-24 15:51:16,096 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 344, in format_and_eval_string
+2017-01-24 15:51:16,096 | MainProcess | CRITICAL | return safe_eval(string)
+2017-01-24 15:51:16,096 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\string_evaluation.py", line 43, in safe_eval
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | return eval(expr)
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | File "
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | <string>
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | ", line
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | 0
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | ^
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | SyntaxError
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | :
+2017-01-24 15:51:16,098 | MainProcess | CRITICAL | unexpected EOF while parsing
+2017-01-24 15:51:20,641 | MainProcess | INFO | The profiles requested for the measurement  are not available, instr tests will be skipped and performed before actually starting the measure.
+2017-01-24 15:51:20,642 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:51:20,642 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 15:51:20,642 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 15:51:20,642 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:51:20,642 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:51:20,642 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:51:20,644 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:51:20,644 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:51:20,644 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:51:20,644 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 396, in <module>
+2017-01-24 15:51:20,644 | MainProcess | CRITICAL | workspace.enqueue_measure(measure)
+2017-01-24 15:51:20,644 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 240, in enqueue_measure
+2017-01-24 15:51:20,645 | MainProcess | CRITICAL | test_instr=test_instrs)
+2017-01-24 15:51:20,645 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 178, in run_checks
+2017-01-24 15:51:20,645 | MainProcess | CRITICAL | check, errors = self.root_task.check(test_instr=test_instr)
+2017-01-24 15:51:20,645 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1361, in check
+2017-01-24 15:51:20,648 | MainProcess | CRITICAL | check = super(RootTask, self).check(*args, **kwargs)
+2017-01-24 15:51:20,648 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 580, in check
+2017-01-24 15:51:20,648 | MainProcess | CRITICAL | check = aux.check(*args, **kwargs)
+2017-01-24 15:51:20,648 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 76, in check
+2017-01-24 15:51:20,648 | MainProcess | CRITICAL | loop_points = np.array(self.format_and_eval_string(self.loop_points))
+2017-01-24 15:51:20,648 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 344, in format_and_eval_string
+2017-01-24 15:51:20,650 | MainProcess | CRITICAL | return safe_eval(string)
+2017-01-24 15:51:20,650 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\string_evaluation.py", line 43, in safe_eval
+2017-01-24 15:51:20,650 | MainProcess | CRITICAL | return eval(expr)
+2017-01-24 15:51:20,650 | MainProcess | CRITICAL | File "
+2017-01-24 15:51:20,650 | MainProcess | CRITICAL | <string>
+2017-01-24 15:51:20,651 | MainProcess | CRITICAL | ", line
+2017-01-24 15:51:20,651 | MainProcess | CRITICAL | 0
+2017-01-24 15:51:20,651 | MainProcess | CRITICAL | ^
+2017-01-24 15:51:20,651 | MainProcess | CRITICAL | SyntaxError
+2017-01-24 15:51:20,653 | MainProcess | CRITICAL | :
+2017-01-24 15:51:20,653 | MainProcess | CRITICAL | unexpected EOF while parsing
+2017-01-24 15:57:27,964 | MainProcess | INFO | Invalid pref path
+2017-01-24 15:57:30,163 | MainProcess | INFO | Log system started.
+2017-01-24 15:57:59,539 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 15:57:59,565 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 15:57:59,565 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 15:57:59,565 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 15:57:59,575 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 15:58:28,059 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:58:28,059 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 15:58:28,059 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 15:58:28,059 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:58:28,059 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:58:28,059 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:58:28,059 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:58:28,059 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:58:28,061 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:58:28,061 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 396, in <module>
+2017-01-24 15:58:28,061 | MainProcess | CRITICAL | workspace.enqueue_measure(measure)
+2017-01-24 15:58:28,061 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 240, in enqueue_measure
+2017-01-24 15:58:28,062 | MainProcess | CRITICAL | test_instr=test_instrs)
+2017-01-24 15:58:28,062 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 178, in run_checks
+2017-01-24 15:58:28,062 | MainProcess | CRITICAL | check, errors = self.root_task.check(test_instr=test_instr)
+2017-01-24 15:58:28,062 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1361, in check
+2017-01-24 15:58:28,063 | MainProcess | CRITICAL | check = super(RootTask, self).check(*args, **kwargs)
+2017-01-24 15:58:28,063 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 580, in check
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | check = aux.check(*args, **kwargs)
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 81, in check
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | loop_points = np.array(self.format_and_eval_string(self.loop_points))
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 344, in format_and_eval_string
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | return safe_eval(string)
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\string_evaluation.py", line 43, in safe_eval
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | return eval(expr)
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | File "
+2017-01-24 15:58:28,065 | MainProcess | CRITICAL | <string>
+2017-01-24 15:58:28,066 | MainProcess | CRITICAL | ", line
+2017-01-24 15:58:28,066 | MainProcess | CRITICAL | 0
+2017-01-24 15:58:28,066 | MainProcess | CRITICAL | ^
+2017-01-24 15:58:28,066 | MainProcess | CRITICAL | SyntaxError
+2017-01-24 15:58:28,066 | MainProcess | CRITICAL | :
+2017-01-24 15:58:28,066 | MainProcess | CRITICAL | unexpected EOF while parsing
+2017-01-24 15:59:26,707 | MainProcess | INFO | The profiles requested for the measurement  are not available, instr tests will be skipped and performed before actually starting the measure.
+2017-01-24 15:59:26,709 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:59:26,709 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 15:59:26,709 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 15:59:26,709 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 15:59:26,709 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 15:59:26,710 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 15:59:26,710 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 15:59:26,710 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 15:59:26,710 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 15:59:26,710 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 396, in <module>
+2017-01-24 15:59:26,710 | MainProcess | CRITICAL | workspace.enqueue_measure(measure)
+2017-01-24 15:59:26,710 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 240, in enqueue_measure
+2017-01-24 15:59:26,710 | MainProcess | CRITICAL | test_instr=test_instrs)
+2017-01-24 15:59:26,711 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 178, in run_checks
+2017-01-24 15:59:26,711 | MainProcess | CRITICAL | check, errors = self.root_task.check(test_instr=test_instr)
+2017-01-24 15:59:26,711 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1361, in check
+2017-01-24 15:59:26,713 | MainProcess | CRITICAL | check = super(RootTask, self).check(*args, **kwargs)
+2017-01-24 15:59:26,713 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 580, in check
+2017-01-24 15:59:26,713 | MainProcess | CRITICAL | check = aux.check(*args, **kwargs)
+2017-01-24 15:59:26,714 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 81, in check
+2017-01-24 15:59:26,714 | MainProcess | CRITICAL | loop_points = np.array(self.format_and_eval_string(self.loop_points))
+2017-01-24 15:59:26,714 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 344, in format_and_eval_string
+2017-01-24 15:59:26,714 | MainProcess | CRITICAL | return safe_eval(string)
+2017-01-24 15:59:26,716 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\string_evaluation.py", line 43, in safe_eval
+2017-01-24 15:59:26,716 | MainProcess | CRITICAL | return eval(expr)
+2017-01-24 15:59:26,716 | MainProcess | CRITICAL | File "
+2017-01-24 15:59:26,716 | MainProcess | CRITICAL | <string>
+2017-01-24 15:59:26,716 | MainProcess | CRITICAL | ", line
+2017-01-24 15:59:26,716 | MainProcess | CRITICAL | 0
+2017-01-24 15:59:26,716 | MainProcess | CRITICAL | ^
+2017-01-24 15:59:26,716 | MainProcess | CRITICAL | SyntaxError
+2017-01-24 15:59:26,717 | MainProcess | CRITICAL | :
+2017-01-24 15:59:26,717 | MainProcess | CRITICAL | unexpected EOF while parsing
+2017-01-24 15:59:29,207 | MainProcess | INFO | Invalid pref path
+2017-01-24 15:59:30,828 | MainProcess | INFO | Log system started.
+2017-01-24 15:59:54,170 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 15:59:54,196 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 15:59:54,196 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 15:59:54,196 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 15:59:54,204 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:00:14,683 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 16:00:14,684 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 396, in <module>
+2017-01-24 16:00:14,686 | MainProcess | CRITICAL | workspace.enqueue_measure(measure)
+2017-01-24 16:00:14,686 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 240, in enqueue_measure
+2017-01-24 16:00:14,686 | MainProcess | CRITICAL | test_instr=test_instrs)
+2017-01-24 16:00:14,686 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 178, in run_checks
+2017-01-24 16:00:14,687 | MainProcess | CRITICAL | check, errors = self.root_task.check(test_instr=test_instr)
+2017-01-24 16:00:14,687 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1361, in check
+2017-01-24 16:00:14,687 | MainProcess | CRITICAL | check = super(RootTask, self).check(*args, **kwargs)
+2017-01-24 16:00:14,687 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 580, in check
+2017-01-24 16:00:14,688 | MainProcess | CRITICAL | check = aux.check(*args, **kwargs)
+2017-01-24 16:00:14,688 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 81, in check
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | loop_points = np.array(self.format_and_eval_string(self.loop_points))
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 344, in format_and_eval_string
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | return safe_eval(string)
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\string_evaluation.py", line 43, in safe_eval
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | return eval(expr)
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | File "
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | <string>
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | ", line
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | 0
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | ^
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | SyntaxError
+2017-01-24 16:00:14,690 | MainProcess | CRITICAL | :
+2017-01-24 16:00:14,691 | MainProcess | CRITICAL | unexpected EOF while parsing
+2017-01-24 16:01:00,918 | MainProcess | INFO | The profiles requested for the measurement  are not available, instr tests will be skipped and performed before actually starting the measure.
+2017-01-24 16:01:00,918 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 16:01:00,918 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 16:01:00,920 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 16:01:00,920 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 16:01:00,920 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 16:01:00,920 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 16:01:00,920 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 16:01:00,921 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 16:01:00,921 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 16:01:00,921 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 396, in <module>
+2017-01-24 16:01:00,921 | MainProcess | CRITICAL | workspace.enqueue_measure(measure)
+2017-01-24 16:01:00,921 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 240, in enqueue_measure
+2017-01-24 16:01:00,921 | MainProcess | CRITICAL | test_instr=test_instrs)
+2017-01-24 16:01:00,921 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 178, in run_checks
+2017-01-24 16:01:00,921 | MainProcess | CRITICAL | check, errors = self.root_task.check(test_instr=test_instr)
+2017-01-24 16:01:00,923 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1361, in check
+2017-01-24 16:01:00,924 | MainProcess | CRITICAL | check = super(RootTask, self).check(*args, **kwargs)
+2017-01-24 16:01:00,924 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 580, in check
+2017-01-24 16:01:00,924 | MainProcess | CRITICAL | check = aux.check(*args, **kwargs)
+2017-01-24 16:01:00,924 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 81, in check
+2017-01-24 16:01:00,924 | MainProcess | CRITICAL | loop_points = np.array(self.format_and_eval_string(self.loop_points))
+2017-01-24 16:01:00,924 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 344, in format_and_eval_string
+2017-01-24 16:01:00,926 | MainProcess | CRITICAL | return safe_eval(string)
+2017-01-24 16:01:00,926 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\string_evaluation.py", line 43, in safe_eval
+2017-01-24 16:01:00,926 | MainProcess | CRITICAL | return eval(expr)
+2017-01-24 16:01:00,926 | MainProcess | CRITICAL | File "
+2017-01-24 16:01:00,926 | MainProcess | CRITICAL | <string>
+2017-01-24 16:01:00,927 | MainProcess | CRITICAL | ", line
+2017-01-24 16:01:00,927 | MainProcess | CRITICAL | 0
+2017-01-24 16:01:00,927 | MainProcess | CRITICAL | ^
+2017-01-24 16:01:00,927 | MainProcess | CRITICAL | SyntaxError
+2017-01-24 16:01:00,927 | MainProcess | CRITICAL | :
+2017-01-24 16:01:00,927 | MainProcess | CRITICAL | unexpected EOF while parsing
+2017-01-24 16:01:04,296 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:01:05,355 | MainProcess | INFO | Log system started.
+2017-01-24 16:01:11,756 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 16:01:11,778 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 16:01:11,779 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 16:01:11,779 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 16:01:11,785 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:01:49,989 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:01:51,954 | MainProcess | INFO | Log system started.
+2017-01-24 16:01:59,855 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 16:01:59,875 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 16:01:59,875 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 16:01:59,875 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 16:01:59,881 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:02:01,414 | MainProcess | INFO | False
+2017-01-24 16:02:20,326 | MainProcess | INFO | False
+2017-01-24 16:02:25,026 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:02:26,141 | MainProcess | INFO | Log system started.
+2017-01-24 16:02:33,121 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 16:02:33,142 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 16:02:33,142 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 16:02:33,142 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 16:02:33,148 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:02:44,305 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:03:07,703 | MainProcess | INFO | Log system started.
+2017-01-24 16:03:13,713 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 16:03:13,733 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 16:03:13,733 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 16:03:13,733 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 16:03:13,740 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:03:14,841 | MainProcess | INFO | True
+2017-01-24 16:04:08,894 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:04:09,569 | MainProcess | INFO | Log system started.
+2017-01-24 16:04:15,440 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 16:04:15,440 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_action.py", line 78, in on_triggered
+2017-01-24 16:04:15,440 | MainProcess | CRITICAL | self.declaration.triggered(checked)
+2017-01-24 16:04:15,440 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 16:04:15,440 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 16:04:15,440 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 16:04:15,440 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 16:04:15,440 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 16:04:15,441 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 16:04:15,441 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 381, in <module>
+2017-01-24 16:04:15,441 | MainProcess | CRITICAL | workspace.load_measure(mode='file')
+2017-01-24 16:04:15,441 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 185, in load_measure
+2017-01-24 16:04:15,443 | MainProcess | CRITICAL | full_path)
+2017-01-24 16:04:15,443 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 113, in load_measure
+2017-01-24 16:04:15,443 | MainProcess | CRITICAL | kwarg = {'mode': 'config', 'config': config['root_task'],
+2017-01-24 16:04:15,443 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\configobj.py", line 554, in __getitem__
+2017-01-24 16:04:15,444 | MainProcess | CRITICAL | val = dict.__getitem__(self, key)
+2017-01-24 16:04:15,444 | MainProcess | CRITICAL | KeyError
+2017-01-24 16:04:15,444 | MainProcess | CRITICAL | :
+2017-01-24 16:04:15,444 | MainProcess | CRITICAL | 'root_task'
+2017-01-24 16:04:22,450 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 16:04:22,470 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 16:04:22,470 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 16:04:22,470 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 16:04:22,474 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:04:34,621 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:15:22,743 | MainProcess | INFO | Log system started.
+2017-01-24 16:15:28,273 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 16:15:28,273 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_action.py", line 78, in on_triggered
+2017-01-24 16:15:28,273 | MainProcess | CRITICAL | self.declaration.triggered(checked)
+2017-01-24 16:15:28,273 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 16:15:28,273 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 16:15:28,273 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 16:15:28,275 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 16:15:28,275 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 16:15:28,275 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 16:15:28,275 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 381, in <module>
+2017-01-24 16:15:28,276 | MainProcess | CRITICAL | workspace.load_measure(mode='file')
+2017-01-24 16:15:28,276 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 185, in load_measure
+2017-01-24 16:15:28,276 | MainProcess | CRITICAL | full_path)
+2017-01-24 16:15:28,276 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 113, in load_measure
+2017-01-24 16:15:28,276 | MainProcess | CRITICAL | kwarg = {'mode': 'config', 'config': config['root_task'],
+2017-01-24 16:15:28,276 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\configobj.py", line 554, in __getitem__
+2017-01-24 16:15:28,276 | MainProcess | CRITICAL | val = dict.__getitem__(self, key)
+2017-01-24 16:15:28,278 | MainProcess | CRITICAL | KeyError
+2017-01-24 16:15:28,278 | MainProcess | CRITICAL | :
+2017-01-24 16:15:28,278 | MainProcess | CRITICAL | 'root_task'
+2017-01-24 16:15:34,006 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 16:15:34,035 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 16:15:34,035 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 16:15:34,035 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 16:15:34,040 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:16:23,196 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:18:22,112 | MainProcess | INFO | Log system started.
+2017-01-24 16:18:26,608 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:18:55,168 | MainProcess | INFO | Log system started.
+2017-01-24 16:19:00,723 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 16:19:00,743 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 16:19:00,743 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 16:19:00,743 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 16:19:00,750 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:19:32,278 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 16:19:32,319 | MainProcess | INFO | Starting measure .
+2017-01-24 16:19:32,674 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 16:19:32,674 | MeasureProcess | INFO | Process running
+2017-01-24 16:19:32,720 | MeasureProcess | INFO | Task built
+2017-01-24 16:19:32,742 | MeasureProcess | INFO | Check successful
+2017-01-24 16:19:32,776 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 214, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 119, in compile_loop
+    return self.sequence.compile_loop()
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 716, in compile_loop
+    missings, errors)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 235, in _compile_items
+    miss, errors)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 73, in eval_entries
+    missings, errors, self.index)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 117, in eval_entries
+    self._amplitude = amp
+TypeError: range value too large
+2017-01-24 16:19:32,786 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 16:19:32,786 | MainProcess | INFO | Stopping measure .
+2017-01-24 16:19:33,789 | MeasureProcess | INFO | Process shuting down
+2017-01-24 16:20:07,451 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 16:20:07,451 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 16:20:07,451 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 16:20:07,451 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 396, in <module>
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | workspace.enqueue_measure(measure)
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 240, in enqueue_measure
+2017-01-24 16:20:07,453 | MainProcess | CRITICAL | test_instr=test_instrs)
+2017-01-24 16:20:07,454 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 178, in run_checks
+2017-01-24 16:20:07,454 | MainProcess | CRITICAL | check, errors = self.root_task.check(test_instr=test_instr)
+2017-01-24 16:20:07,454 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1361, in check
+2017-01-24 16:20:07,457 | MainProcess | CRITICAL | check = super(RootTask, self).check(*args, **kwargs)
+2017-01-24 16:20:07,457 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 580, in check
+2017-01-24 16:20:07,457 | MainProcess | CRITICAL | check = aux.check(*args, **kwargs)
+2017-01-24 16:20:07,457 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_sequence_task.py", line 53, in check
+2017-01-24 16:20:07,457 | MainProcess | CRITICAL | res, details = self.compile_sequence()
+2017-01-24 16:20:07,457 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_sequence_task.py", line 72, in compile_sequence
+2017-01-24 16:20:07,457 | MainProcess | CRITICAL | return self.sequence.compile_sequence()
+2017-01-24 16:20:07,457 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 644, in compile_sequence
+2017-01-24 16:20:07,459 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 16:20:07,459 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 235, in _compile_items
+2017-01-24 16:20:07,459 | MainProcess | CRITICAL | miss, errors)
+2017-01-24 16:20:07,460 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 73, in eval_entries
+2017-01-24 16:20:07,460 | MainProcess | CRITICAL | missings, errors, self.index)
+2017-01-24 16:20:07,460 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 117, in eval_entries
+2017-01-24 16:20:07,460 | MainProcess | CRITICAL | self._amplitude = amp
+2017-01-24 16:20:07,460 | MainProcess | CRITICAL | TypeError
+2017-01-24 16:20:07,460 | MainProcess | CRITICAL | :
+2017-01-24 16:20:07,460 | MainProcess | CRITICAL | The '_amplitude' member on the 'SquareShape' object must be of type 'float'. Got object of type 'int' instead.
+2017-01-24 16:20:12,638 | MainProcess | INFO | The profiles requested for the measurement  are not available, instr tests will be skipped and performed before actually starting the measure.
+2017-01-24 16:20:12,638 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 16:20:12,638 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 16:20:12,638 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 16:20:12,638 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 16:20:12,638 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 16:20:12,638 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 16:20:12,640 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 16:20:12,640 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 16:20:12,640 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 16:20:12,640 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure_edition.enaml", line 396, in <module>
+2017-01-24 16:20:12,641 | MainProcess | CRITICAL | workspace.enqueue_measure(measure)
+2017-01-24 16:20:12,641 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\workspace.py", line 240, in enqueue_measure
+2017-01-24 16:20:12,641 | MainProcess | CRITICAL | test_instr=test_instrs)
+2017-01-24 16:20:12,641 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\measurement\measure.py", line 178, in run_checks
+2017-01-24 16:20:12,641 | MainProcess | CRITICAL | check, errors = self.root_task.check(test_instr=test_instr)
+2017-01-24 16:20:12,641 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1361, in check
+2017-01-24 16:20:12,642 | MainProcess | CRITICAL | check = super(RootTask, self).check(*args, **kwargs)
+2017-01-24 16:20:12,642 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 580, in check
+2017-01-24 16:20:12,644 | MainProcess | CRITICAL | check = aux.check(*args, **kwargs)
+2017-01-24 16:20:12,644 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_sequence_task.py", line 53, in check
+2017-01-24 16:20:12,644 | MainProcess | CRITICAL | res, details = self.compile_sequence()
+2017-01-24 16:20:12,644 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_sequence_task.py", line 72, in compile_sequence
+2017-01-24 16:20:12,644 | MainProcess | CRITICAL | return self.sequence.compile_sequence()
+2017-01-24 16:20:12,644 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 644, in compile_sequence
+2017-01-24 16:20:12,645 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 16:20:12,645 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 235, in _compile_items
+2017-01-24 16:20:12,645 | MainProcess | CRITICAL | miss, errors)
+2017-01-24 16:20:12,645 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 73, in eval_entries
+2017-01-24 16:20:12,645 | MainProcess | CRITICAL | missings, errors, self.index)
+2017-01-24 16:20:12,647 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 117, in eval_entries
+2017-01-24 16:20:12,647 | MainProcess | CRITICAL | self._amplitude = amp
+2017-01-24 16:20:12,647 | MainProcess | CRITICAL | TypeError
+2017-01-24 16:20:12,647 | MainProcess | CRITICAL | :
+2017-01-24 16:20:12,647 | MainProcess | CRITICAL | range value too large

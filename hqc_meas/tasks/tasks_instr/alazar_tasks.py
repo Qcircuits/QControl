@@ -53,6 +53,9 @@ class DemodAlazarTask(InstrumentTask):
     trigrange = Enum('2.5V','5V').tag(pref=True)
 
     triglevel = Str('0.3').tag(pref=True)
+    
+    parallel = set_default({'activated': False, 'pool': 'acq'})
+
 
     driver_list = ['Alazar935x','Alazar987x']
 
@@ -223,6 +226,8 @@ class TracesAlazarTask(InstrumentTask):
     trigrange = Enum('2.5V','5V').tag(pref=True)
 
     triglevel = Str('0.3').tag(pref=True)
+            
+    parallel = set_default({'activated': False, 'pool': 'acq'})
 
     driver_list = ['Alazar935x','Alazar987x']
 

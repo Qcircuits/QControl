@@ -331,23 +331,26 @@ class AWGContext(BaseContext):
                                           (pulse.kind, pulse.channel))}
 
 #        # Check the overflows
-#        traceback = {}
-#        for channel in used_channels:
-#            analog = array_analog[channel]
-#            if analog.max() > 16383 or analog.min() < 0:
-#                mes = 'Analogical values out of range.'
-#                traceback['{}_A'.format(channel)] = mes
-#
-#            elif array_M1[channel].max() > 1 or array_M1[channel].min() < 0:
-#                mes = 'Overflow in marker 1.'
-#                traceback['{}_M1'.format(channel)] = mes
-#
-#            elif array_M2[channel].max() > 1 or array_M2[channel].min() < 0:
-#                mes = 'Overflow in marker 2.'
-#                traceback['{}_M2'.format(channel)] = mes
-#
-#        if traceback:
-#            return False, traceback
+        traceback = {}
+        for channel in used_channels:
+            for i in range(len(array_analog[channel])):
+                analog = array_analog[channel][i]
+                m1 = array_M1[channel][i]
+                m2 = array_M2[channel][i]                
+                if analog.max() > 16383 or analog.min() < 0:
+                    mes = 'Analogical values out of range.'
+                    traceback['{}_A'.format(channel)] = mes
+            
+                elif m1.max() > 1 or m1.min() < 0:
+                    mes = 'Overflow in marker 1.'
+                    traceback['{}_M1'.format(channel)] = mes
+    
+                elif m2.max() > 1 or m2.min() < 0:
+                    mes = 'Overflow in marker 2.'
+                    traceback['{}_M2'.format(channel)] = mes
+
+        if traceback:
+            return False, traceback, None
 
         # Invert marked logical channels.
         for i_ch in self.inverted_log_channels:
