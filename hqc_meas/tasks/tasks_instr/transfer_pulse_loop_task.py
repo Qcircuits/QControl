@@ -29,9 +29,8 @@ class TransferPulseLoopTask(InterfaceableTaskMixin, InstrumentTask):
     #: Global variable to use for the sequence.
     sequence_vars = Dict().tag(pref=True)
     
-    #: Loop variables: channels on which the loop will be done, loop parameters
+    #: Loop variables: loop parameters
     #: names, start value, stop value and number of points per loop
-    loopable_channels = Str().tag(pref=True)
     
     loop_names = Str().tag(pref=True)
     
@@ -40,15 +39,6 @@ class TransferPulseLoopTask(InterfaceableTaskMixin, InstrumentTask):
     loop_stop = Str().tag(pref=True)
 
     loop_points = Str().tag(pref=True)
-    
-    #: Check if each sequence has to wait for a trigger
-    wait_trigger = Bool().tag(pref=False)
-    
-    #: internal or external trigger
-    internal_trigger = Bool().tag(pref=False)
-
-    #: Internal trigger period in mus
-    trigger_period = Str().tag(pref=True)
       
     def intricate_loops(self, var_count, variables):
         loop_points = np.array(self.format_and_eval_string(self.loop_points))
@@ -113,7 +103,7 @@ class TransferPulseLoopTask(InterfaceableTaskMixin, InstrumentTask):
         
         return test, traceback
 
-    def compile_sequence(self, loop_names, value):
+    def compile_loop(self, loop_names, value):
         """Compile the sequence.
 
         """
@@ -127,7 +117,7 @@ class TransferPulseLoopTask(InterfaceableTaskMixin, InstrumentTask):
                         v = v.replace(loop_names[p], value[p])
                         
             self.sequence.external_vars[k] = self.format_and_eval_string(v)
-        return self.sequence.compile_sequence()
+        return self.sequence.compile_loop()
 
     def answer(self, members, callables):
         """Overriden method to take into account the presence of the sequence.
@@ -209,9 +199,6 @@ class AWGTransferLoopInterface(InstrTaskInterface):
             
         task.driver.run_mode = 'SEQUENCE'
         
-        loopable_ch = task.format_and_eval_string(task.loopable_channels)
-        loopable_ch = np.array(loopable_ch)
-        
         loop_names = task.loop_names.split(',')
         loop_points = np.array(task.format_and_eval_string(task.loop_points))
                 
@@ -221,46 +208,37 @@ class AWGTransferLoopInterface(InstrTaskInterface):
          
         task.driver.clear_sequence()
         
-        if task.wait_trigger:
-            if task.internal_trigger:
-                period = task.format_and_eval_string(task.trigger_period)*10**3
-                task.driver.internal_trigger = 'INT'
-                task.driver.internal_trigger_period = period
-            else:
-                task.driver.internal_trigger = 'EXT'
-        
+        current_pos = 0        
         for i in range(0, Nwaveforms):
             seq_name = task.format_string(self.sequence_name) if self.sequence_name else 'Sequence'
             seq_name_iter = seq_name + '_' + str(int(i))
-            res, seqs = task.compile_sequence(loop_names, variables[i])
+            res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
             if not res:
                 mess = 'Failed to compile the pulse sequence: missing {}, errs {}'
-                raise RuntimeError(mess.format(*seqs))
+                raise RuntimeError(mess.format(*byteseq))
     
+            already_added = {}            
             for ch_id in task.driver.defined_channels:
-                if ch_id in seqs and i == 0:
-                     task.driver.to_send(seq_name_iter 
-                                     + '_Ch{}'.format(ch_id), seqs[ch_id], False)
-                     task.driver.set_sequence_pos(seq_name_iter 
-                                     + '_Ch{}'.format(ch_id), ch_id, i +1)
-
-                elif ch_id in seqs and ch_id in loopable_ch:
-                    task.driver.to_send(seq_name_iter 
-                                    + '_Ch{}'.format(ch_id), seqs[ch_id], False)
-                    task.driver.set_sequence_pos(seq_name_iter 
-                                    + '_Ch{}'.format(ch_id), ch_id, i + 1)
-                elif ch_id in seqs:
-                    task.driver.set_sequence_pos(seq_name + '_' + str(0) 
-                                + '_Ch{}'.format(ch_id), ch_id, i +1)           
-      
-            index_start = (i + 1)
-            index_stop = (i + 1) % Nwaveforms + 1
-            task.driver.set_goto_pos(index_start, index_stop)
-            if task.wait_trigger:
-                task.driver.set_trigger_pos(index_start)
-           
+                if ch_id in byteseq:
+                    for pos,waveform in enumerate(byteseq[ch_id]):
+                        addr = id(waveform)
+                        if addr not in already_added:
+                            seq_name_transfered = seq_name_iter  + '_Ch{}'.format(ch_id) +\
+                                                '_' + str(pos)
+                            task.driver.to_send(seq_name_transfered, waveform, False)
+                            already_added[addr] = seq_name_transfered
+                        else:
+                            seq_name_transfered =  already_added[addr]
+                        task.driver.set_sequence_pos(seq_name_transfered, ch_id, current_pos + pos + 1)
+                        task.driver.set_repeat(current_pos + pos + 1, repeat[pos])
+                        task.driver.set_goto_pos(current_pos + pos + 1, current_pos + pos + 2)
+        
+            current_pos += len(byteseq[task.driver.defined_channels[0]])
+        
+        task.driver.set_goto_pos(current_pos, 1)
+            
         for ch_id in task.driver.defined_channels:
-           if ch_id in seqs:
+           if ch_id in byteseq:
                ch = task.driver.get_channel(ch_id)                     
                ch.output_state = 'ON'
 

@@ -1,0 +1,23 @@
+2017-01-19 17:09:09,834 | MainProcess | INFO | Log system started.
+2017-01-19 17:09:14,963 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-19 17:09:15,003 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-19 17:09:15,003 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-19 17:09:15,003 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-19 17:09:15,009 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-19 17:09:19,395 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-19 17:09:19,446 | MainProcess | INFO | Starting measure .
+2017-01-19 17:09:19,816 | MeasureProcess | INFO | Logger parametrised
+2017-01-19 17:09:19,816 | MeasureProcess | INFO | Process running
+2017-01-19 17:09:19,845 | MeasureProcess | INFO | Task built
+2017-01-19 17:09:19,867 | MeasureProcess | INFO | Check successful
+2017-01-19 17:09:24,308 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-19 17:09:24,308 | MainProcess | INFO | Stopping measure .
+2017-01-19 17:09:25,323 | MeasureProcess | INFO | Process shuting down
+2017-01-19 17:10:56,259 | MainProcess | INFO | Invalid pref path
+2017-01-19 17:21:56,016 | MainProcess | INFO | Log system started.
+2017-01-19 17:21:59,336 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-19 17:21:59,355 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-19 17:21:59,355 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-19 17:21:59,355 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-19 17:21:59,361 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-19 17:22:20,486 | MainProcess | INFO | Invalid pref path

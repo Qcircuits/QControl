@@ -1,0 +1,407 @@
+2017-01-24 09:38:33,584 | MainProcess | INFO | Invalid pref path
+2017-01-24 09:41:09,232 | MainProcess | INFO | Log system started.
+2017-01-24 09:41:23,517 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 09:41:23,599 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 09:41:23,599 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 09:41:23,599 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 09:41:23,634 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 09:41:57,612 | MainProcess | INFO | Sequence correctly loaded from file.
+2017-01-24 09:42:12,453 | MainProcess | INFO | New sequence created
+2017-01-24 10:44:40,934 | MainProcess | INFO | Invalid pref path
+2017-01-24 10:44:44,240 | MainProcess | INFO | Log system started.
+2017-01-24 10:44:48,551 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 10:44:48,578 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 10:44:48,578 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 10:44:48,578 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 10:44:48,582 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 11:10:28,684 | MainProcess | INFO | Correctly saved sequence in file.
+2017-01-24 11:21:24,711 | MainProcess | INFO | Invalid pref path
+2017-01-24 11:21:26,868 | MainProcess | INFO | Log system started.
+2017-01-24 11:21:32,562 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 11:21:32,582 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 11:21:32,582 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 11:21:32,582 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 11:21:32,586 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 11:21:37,979 | MainProcess | INFO | Sequence correctly loaded from file.
+2017-01-24 11:21:52,792 | MainProcess | INFO | Sequence correctly loaded from file.
+2017-01-24 11:21:57,424 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 11:21:57,424 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 11:21:57,424 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 11:21:57,424 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 11:21:57,424 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 11:21:57,424 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 11:21:57,424 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 11:21:57,424 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 11:21:57,426 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 11:21:57,426 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas_2\hqc_meas\pulses\manager\workspace\dialogs.enaml", line 95, in <module>
+2017-01-24 11:21:57,426 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 644, in compile_sequence
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 235, in _compile_items
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | miss, errors)
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 65, in eval_entries
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\item.py", line 118, in eval_entries
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | setattr(self, par1, d1)
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | TypeError
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | :
+2017-01-24 11:21:57,427 | MainProcess | CRITICAL | The 'duration' member on the 'Pulse' object must be of type 'float'. Got object of type 'str' instead.
+2017-01-24 11:22:24,076 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 11:22:24,076 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 11:22:24,076 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 11:22:24,078 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 11:22:24,078 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 11:22:24,078 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 11:22:24,078 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 11:22:24,078 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 11:22:24,078 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 11:22:24,078 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas_2\hqc_meas\pulses\manager\workspace\dialogs.enaml", line 95, in <module>
+2017-01-24 11:22:24,078 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 644, in compile_sequence
+2017-01-24 11:22:24,079 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 11:22:24,079 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 235, in _compile_items
+2017-01-24 11:22:24,079 | MainProcess | CRITICAL | miss, errors)
+2017-01-24 11:22:24,079 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 65, in eval_entries
+2017-01-24 11:22:24,081 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 11:22:24,081 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\item.py", line 118, in eval_entries
+2017-01-24 11:22:24,081 | MainProcess | CRITICAL | setattr(self, par1, d1)
+2017-01-24 11:22:24,081 | MainProcess | CRITICAL | TypeError
+2017-01-24 11:22:24,081 | MainProcess | CRITICAL | :
+2017-01-24 11:22:24,081 | MainProcess | CRITICAL | The 'duration' member on the 'Pulse' object must be of type 'float'. Got object of type 'str' instead.
+2017-01-24 11:23:09,308 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 11:23:09,309 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas_2\hqc_meas\pulses\manager\workspace\dialogs.enaml", line 95, in <module>
+2017-01-24 11:23:09,311 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 644, in compile_sequence
+2017-01-24 11:23:09,311 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 11:23:09,311 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 235, in _compile_items
+2017-01-24 11:23:09,312 | MainProcess | CRITICAL | miss, errors)
+2017-01-24 11:23:09,312 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 65, in eval_entries
+2017-01-24 11:23:09,312 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 11:23:09,312 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\item.py", line 118, in eval_entries
+2017-01-24 11:23:09,312 | MainProcess | CRITICAL | setattr(self, par1, d1)
+2017-01-24 11:23:09,312 | MainProcess | CRITICAL | TypeError
+2017-01-24 11:23:09,312 | MainProcess | CRITICAL | :
+2017-01-24 11:23:09,312 | MainProcess | CRITICAL | The 'duration' member on the 'Pulse' object must be of type 'float'. Got object of type 'str' instead.
+2017-01-24 11:23:16,345 | MainProcess | INFO | Invalid pref path
+2017-01-24 11:23:19,437 | MainProcess | INFO | Log system started.
+2017-01-24 11:23:25,358 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 11:23:25,378 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 11:23:25,378 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 11:23:25,378 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 11:23:25,382 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 11:23:37,265 | MainProcess | INFO | Sequence correctly loaded from file.
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\qt_abstract_button.py", line 76, in on_clicked
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | self.declaration.clicked(checked)
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\declarative_meta.py", line 68, in declarative_change_handler
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | engine.write(owner, change['name'], change)
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\expression_engine.py", line 210, in write
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | pair.writer(owner, name, change)
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\standard_handlers.py", line 82, in __call__
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | call_func(func, (), {}, scope)
+2017-01-24 11:23:50,710 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas_2\hqc_meas\pulses\manager\workspace\dialogs.enaml", line 95, in <module>
+2017-01-24 11:23:50,711 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 644, in compile_sequence
+2017-01-24 11:23:50,711 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 235, in _compile_items
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | miss, errors)
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 65, in eval_entries
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | missings, errors)
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | File "C:\Measuring\HQCMeas\hqc_meas\pulses\item.py", line 118, in eval_entries
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | setattr(self, par1, d1)
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | TypeError
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | :
+2017-01-24 11:23:50,713 | MainProcess | CRITICAL | The 'duration' member on the 'Pulse' object must be of type 'float'. Got object of type 'str' instead.
+2017-01-24 11:27:18,525 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:27:18,628 | MainProcess | INFO | Starting measure .
+2017-01-24 11:27:19,002 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:27:19,003 | MeasureProcess | INFO | Process running
+2017-01-24 11:27:19,048 | MeasureProcess | INFO | Task built
+2017-01-24 11:27:19,065 | MeasureProcess | INFO | Check successful
+2017-01-24 11:27:19,078 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 215, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 119, in compile_loop
+    self.sequence.external_vars[k] = self.format_and_eval_string(v)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 303, in format_and_eval_string
+    elements[1::2])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_database.py", line 207, in get_entries_indexes
+    for name in entries}
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_database.py", line 207, in <dictcomp>
+    for name in entries}
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_database.py", line 523, in _find_index
+    entry))
+KeyError: "Can't find entry matching root, 100.0"
+2017-01-24 11:27:19,088 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 11:27:19,089 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:27:20,091 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:27:31,374 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:27:31,404 | MainProcess | INFO | Starting measure .
+2017-01-24 11:27:31,762 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:27:31,762 | MeasureProcess | INFO | Process running
+2017-01-24 11:27:31,812 | MeasureProcess | INFO | Task built
+2017-01-24 11:27:31,851 | MeasureProcess | INFO | Check successful
+2017-01-24 11:27:33,006 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 215, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 120, in compile_loop
+    return self.sequence.compile_loop()
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 738, in compile_loop
+    return self.context.compile_loop(pulses, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\contexts\awg_context.py", line 214, in compile_loop
+    waveform = pulse.waveform
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 164, in _get_waveform
+    shape = self.shape.compute(time, context.time_unit)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 296, in compute
+    out[time - time[0] >= len(time) - self._edge_width*2] = gaussian[(time-time[0]>self._edge_width*2)*(time-time[0]<=self._edge_width*4)]
+ValueError: NumPy boolean array indexing assignment cannot assign 0 input values to the 100 output values where the mask is true
+2017-01-24 11:27:33,030 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 11:27:33,030 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:27:34,039 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:28:17,796 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:28:17,834 | MainProcess | INFO | Starting measure .
+2017-01-24 11:28:18,201 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:28:18,201 | MeasureProcess | INFO | Process running
+2017-01-24 11:28:18,233 | MeasureProcess | INFO | Task built
+2017-01-24 11:28:18,256 | MeasureProcess | INFO | Check successful
+2017-01-24 11:28:18,308 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 215, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 120, in compile_loop
+    return self.sequence.compile_loop()
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 738, in compile_loop
+    return self.context.compile_loop(pulses, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\contexts\awg_context.py", line 214, in compile_loop
+    waveform = pulse.waveform
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 164, in _get_waveform
+    shape = self.shape.compute(time, context.time_unit)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 296, in compute
+    out[time - time[0] >= len(time) - self._edge_width*2] = gaussian[(time-time[0]>self._edge_width*2)*(time-time[0]<=self._edge_width*4)]
+ValueError: NumPy boolean array indexing assignment cannot assign 0 input values to the 100 output values where the mask is true
+2017-01-24 11:28:18,322 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 11:28:18,322 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:28:19,321 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:28:54,424 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:28:54,453 | MainProcess | INFO | Starting measure .
+2017-01-24 11:28:54,805 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:28:54,805 | MeasureProcess | INFO | Process running
+2017-01-24 11:28:54,852 | MeasureProcess | INFO | Task built
+2017-01-24 11:28:54,872 | MeasureProcess | INFO | Check successful
+2017-01-24 11:28:54,959 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 215, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 120, in compile_loop
+    return self.sequence.compile_loop()
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 738, in compile_loop
+    return self.context.compile_loop(pulses, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\contexts\awg_context.py", line 214, in compile_loop
+    waveform = pulse.waveform
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 164, in _get_waveform
+    shape = self.shape.compute(time, context.time_unit)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 296, in compute
+    out[time - time[0] >= len(time) - self._edge_width*2] = gaussian[(time-time[0]>self._edge_width*2)*(time-time[0]<=self._edge_width*4)]
+ValueError: NumPy boolean array indexing assignment cannot assign 99 input values to the 200 output values where the mask is true
+2017-01-24 11:28:54,979 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 11:28:54,980 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:28:55,993 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:29:21,654 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:29:21,698 | MainProcess | INFO | Starting measure .
+2017-01-24 11:29:22,073 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:29:22,073 | MeasureProcess | INFO | Process running
+2017-01-24 11:29:22,121 | MeasureProcess | INFO | Task built
+2017-01-24 11:29:22,144 | MeasureProcess | INFO | Check successful
+2017-01-24 11:29:22,196 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 215, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 120, in compile_loop
+    return self.sequence.compile_loop()
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 738, in compile_loop
+    return self.context.compile_loop(pulses, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\contexts\awg_context.py", line 214, in compile_loop
+    waveform = pulse.waveform
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 164, in _get_waveform
+    shape = self.shape.compute(time, context.time_unit)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 296, in compute
+    out[time - time[0] >= len(time) - self._edge_width*2] = gaussian[(time-time[0]>self._edge_width*2)*(time-time[0]<=self._edge_width*4)]
+ValueError: NumPy boolean array indexing assignment cannot assign 99 input values to the 200 output values where the mask is true
+2017-01-24 11:29:22,217 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 11:29:22,217 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:29:23,230 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:29:45,381 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:29:45,415 | MainProcess | INFO | Starting measure .
+2017-01-24 11:29:45,782 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:29:45,782 | MeasureProcess | INFO | Process running
+2017-01-24 11:29:45,816 | MeasureProcess | INFO | Task built
+2017-01-24 11:29:45,838 | MeasureProcess | INFO | Check successful
+2017-01-24 11:29:54,479 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 11:29:54,480 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:29:55,486 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:38:18,769 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:38:18,799 | MainProcess | INFO | Starting measure .
+2017-01-24 11:38:19,173 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:38:19,174 | MeasureProcess | INFO | Process running
+2017-01-24 11:38:19,219 | MeasureProcess | INFO | Task built
+2017-01-24 11:38:19,243 | MeasureProcess | INFO | Check successful
+2017-01-24 11:38:19,259 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 215, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 120, in compile_loop
+    return self.sequence.compile_loop()
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 738, in compile_loop
+    return self.context.compile_loop(pulses, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\contexts\awg_context.py", line 214, in compile_loop
+    waveform = pulse.waveform
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 164, in _get_waveform
+    shape = self.shape.compute(time, context.time_unit)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 296, in compute
+    out[time - time[0] >= len(time) - self._edge_width*2] = gaussian[(time-time[0]>self._edge_width*2)*(time-time[0]<=self._edge_width*4)]
+ValueError: NumPy boolean array indexing assignment cannot assign 199 input values to the 200 output values where the mask is true
+2017-01-24 11:38:19,272 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 11:38:19,273 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:38:20,273 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:38:37,194 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:38:37,230 | MainProcess | INFO | Starting measure .
+2017-01-24 11:38:37,576 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:38:37,578 | MeasureProcess | INFO | Process running
+2017-01-24 11:38:37,611 | MeasureProcess | INFO | Task built
+2017-01-24 11:38:37,641 | MeasureProcess | INFO | Check successful
+2017-01-24 11:39:16,095 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 11:39:16,095 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:39:17,101 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:41:53,665 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:41:53,719 | MainProcess | INFO | Starting measure .
+2017-01-24 11:41:54,086 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:41:54,086 | MeasureProcess | INFO | Process running
+2017-01-24 11:41:54,115 | MeasureProcess | INFO | Task built
+2017-01-24 11:41:54,150 | MeasureProcess | INFO | Check successful
+2017-01-24 11:42:41,976 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 11:42:41,976 | MainProcess | INFO | Stopping measure .
+2017-01-24 11:42:42,989 | MeasureProcess | INFO | Process shuting down
+2017-01-24 11:47:12,861 | MainProcess | INFO | New sequence created
+2017-01-24 11:54:31,724 | MainProcess | INFO | Correctly saved sequence in file.
+2017-01-24 11:57:42,066 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 11:57:42,111 | MainProcess | INFO | Starting measure .
+2017-01-24 11:57:42,496 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 11:57:42,496 | MeasureProcess | INFO | Process running
+2017-01-24 11:57:42,532 | MeasureProcess | INFO | Task built
+2017-01-24 11:57:42,555 | MeasureProcess | INFO | Check successful
+2017-01-24 12:00:20,099 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 12:00:20,099 | MainProcess | INFO | Stopping measure .
+2017-01-24 12:00:21,115 | MeasureProcess | INFO | Process shuting down
+2017-01-24 13:44:08,647 | MainProcess | INFO | New sequence created
+2017-01-24 14:42:20,655 | MainProcess | INFO | Correctly saved sequence in file.
+2017-01-24 14:43:39,637 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 14:43:39,664 | MainProcess | INFO | Starting measure .
+2017-01-24 14:43:40,036 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 14:43:40,036 | MeasureProcess | INFO | Process running
+2017-01-24 14:43:40,085 | MeasureProcess | INFO | Task built
+2017-01-24 14:43:40,108 | MeasureProcess | INFO | Check successful
+2017-01-24 14:43:41,232 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 215, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 120, in compile_loop
+    return self.sequence.compile_loop()
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 738, in compile_loop
+    return self.context.compile_loop(pulses, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\contexts\awg_context.py", line 214, in compile_loop
+    waveform = pulse.waveform
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 164, in _get_waveform
+    shape = self.shape.compute(time, context.time_unit)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 296, in compute
+    out[time - time[0] >= len(time) - self._edge_width*2] = gaussian[(time-time[0]>self._edge_width*2)*(time-time[0]<=self._edge_width*4)]
+ValueError: NumPy boolean array indexing assignment cannot assign 0 input values to the 200 output values where the mask is true
+2017-01-24 14:43:41,253 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 14:43:41,253 | MainProcess | INFO | Stopping measure .
+2017-01-24 14:43:42,266 | MeasureProcess | INFO | Process shuting down
+2017-01-24 14:44:04,650 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 14:44:04,676 | MainProcess | INFO | Starting measure .
+2017-01-24 14:44:05,026 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 14:44:05,026 | MeasureProcess | INFO | Process running
+2017-01-24 14:44:05,058 | MeasureProcess | INFO | Task built
+2017-01-24 14:44:05,075 | MeasureProcess | INFO | Check successful
+2017-01-24 14:44:05,140 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 72, in perform
+    return self.interface.perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 215, in perform
+    res, byteseq, repeat = task.compile_loop(loop_names, variables[i])
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\transfer_pulse_loop_task.py", line 120, in compile_loop
+    return self.sequence.compile_loop()
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\base_sequences.py", line 738, in compile_loop
+    return self.context.compile_loop(pulses, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\contexts\awg_context.py", line 214, in compile_loop
+    waveform = pulse.waveform
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\pulse.py", line 164, in _get_waveform
+    shape = self.shape.compute(time, context.time_unit)
+  File "C:\Measuring\HQCMeas\hqc_meas\pulses\shapes\base_shapes.py", line 296, in compute
+    out[time - time[0] >= len(time) - self._edge_width*2] = gaussian[(time-time[0]>self._edge_width*2)*(time-time[0]<=self._edge_width*4)]
+ValueError: NumPy boolean array indexing assignment cannot assign 0 input values to the 200 output values where the mask is true
+2017-01-24 14:44:05,153 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 14:44:05,154 | MainProcess | INFO | Stopping measure .
+2017-01-24 14:44:06,154 | MeasureProcess | INFO | Process shuting down
+2017-01-24 14:46:29,890 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 14:46:29,926 | MainProcess | INFO | Starting measure .
+2017-01-24 14:46:30,306 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 14:46:30,308 | MeasureProcess | INFO | Process running
+2017-01-24 14:46:30,349 | MeasureProcess | INFO | Task built
+2017-01-24 14:46:30,384 | MeasureProcess | INFO | Check successful
+2017-01-24 14:51:26,737 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 14:51:26,737 | MainProcess | INFO | Stopping measure .
+2017-01-24 14:51:27,740 | MeasureProcess | INFO | Process shuting down
