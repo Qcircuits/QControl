@@ -1029,3 +1029,487 @@ TypeError: range value too large
 2017-01-24 16:20:12,647 | MainProcess | CRITICAL | TypeError
 2017-01-24 16:20:12,647 | MainProcess | CRITICAL | :
 2017-01-24 16:20:12,647 | MainProcess | CRITICAL | range value too large
+2017-01-24 17:03:40,857 | MainProcess | INFO | The profiles requested for the measurement  are not available, instr tests will be skipped and performed before actually starting the measure.
+2017-01-24 17:03:42,984 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:03:43,042 | MainProcess | INFO | Starting measure .
+2017-01-24 17:03:43,443 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:03:43,443 | MeasureProcess | INFO | Process running
+2017-01-24 17:03:43,532 | MeasureProcess | INFO | Task built
+2017-01-24 17:03:43,536 | MeasureProcess | INFO | Check successful
+2017-01-24 17:03:43,536 | MeasureProcess | ERROR | The following unhandled exception occured:
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\base_tasks.py", line 1373, in perform
+    child.perform_(child)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 78, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\task_interface.py", line 74, in perform
+    return self.i_perform(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\rf_tasks.py", line 178, in i_perform
+    self.start_driver()
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\instr_task.py", line 79, in start_driver
+    config = run_time['profiles'][self.selected_profile]
+KeyError: 'Qubit'
+2017-01-24 17:03:43,552 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 17:03:43,552 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:03:44,568 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:04:00,907 | MainProcess | INFO | Invalid pref path
+2017-01-24 17:04:02,757 | MainProcess | INFO | Log system started.
+2017-01-24 17:04:11,278 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 17:04:11,299 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 17:04:11,299 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 17:04:11,299 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 17:04:11,305 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 17:04:14,096 | MainProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:04:16,071 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:04:16,226 | MainProcess | INFO | Starting measure .
+2017-01-24 17:04:16,598 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:04:16,598 | MeasureProcess | INFO | Process running
+2017-01-24 17:04:16,700 | MeasureProcess | INFO | Task built
+2017-01-24 17:04:16,832 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:04:17,338 | MeasureProcess | INFO | Check successful
+2017-01-24 17:04:17,434 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:04:17,437 | MeasureProcess | INFO | True
+2017-01-24 17:04:17,655 | MeasureProcess | CRITICAL | Instrument assigned to task Friedman is not
+configured to output a current
+2017-01-24 17:04:17,674 | MeasureProcess | INFO | Setting current
+2017-01-24 17:04:17,696 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 17:04:17,696 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:04:18,713 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:06:18,026 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:06:18,164 | MainProcess | INFO | Starting measure .
+2017-01-24 17:06:18,586 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:06:18,586 | MeasureProcess | INFO | Process running
+2017-01-24 17:06:18,677 | MeasureProcess | INFO | Task built
+2017-01-24 17:06:18,786 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:06:19,625 | MeasureProcess | INFO | Check successful
+2017-01-24 17:06:19,698 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:06:19,701 | MeasureProcess | INFO | True
+2017-01-24 17:20:43,911 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:20:43,911 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:20:44,914 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:23:27,736 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:23:27,878 | MainProcess | INFO | Starting measure .
+2017-01-24 17:23:28,323 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:23:28,325 | MeasureProcess | INFO | Process running
+2017-01-24 17:23:28,414 | MeasureProcess | INFO | Task built
+2017-01-24 17:23:28,539 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:23:28,884 | MeasureProcess | INFO | Check successful
+2017-01-24 17:23:28,944 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:23:28,947 | MeasureProcess | INFO | True
+2017-01-24 17:26:22,371 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:26:22,371 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:26:23,375 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:26:49,661 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:26:49,792 | MainProcess | INFO | Starting measure .
+2017-01-24 17:26:50,180 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:26:50,180 | MeasureProcess | INFO | Process running
+2017-01-24 17:26:50,263 | MeasureProcess | INFO | Task built
+2017-01-24 17:26:50,365 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:26:50,710 | MeasureProcess | INFO | Check successful
+2017-01-24 17:26:50,796 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:26:50,799 | MeasureProcess | INFO | True
+2017-01-24 17:27:27,789 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:27:27,960 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:27:27,960 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:27:28,961 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:27:42,829 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:27:42,980 | MainProcess | INFO | Starting measure .
+2017-01-24 17:27:43,345 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:27:43,345 | MeasureProcess | INFO | Process running
+2017-01-24 17:27:43,430 | MeasureProcess | INFO | Task built
+2017-01-24 17:27:43,542 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:27:44,048 | MeasureProcess | INFO | Check successful
+2017-01-24 17:27:44,115 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:27:44,117 | MeasureProcess | INFO | True
+2017-01-24 17:28:12,601 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:28:12,632 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:28:12,632 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:28:13,645 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:28:18,661 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:28:18,805 | MainProcess | INFO | Starting measure .
+2017-01-24 17:28:19,164 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:28:19,164 | MeasureProcess | INFO | Process running
+2017-01-24 17:28:19,253 | MeasureProcess | INFO | Task built
+2017-01-24 17:28:19,368 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:28:19,710 | MeasureProcess | INFO | Check successful
+2017-01-24 17:28:19,798 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:28:19,799 | MeasureProcess | INFO | True
+2017-01-24 17:29:03,450 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:29:03,558 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:29:03,558 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:29:04,569 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:33:18,957 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:33:19,121 | MainProcess | INFO | Starting measure .
+2017-01-24 17:33:19,515 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:33:19,516 | MeasureProcess | INFO | Process running
+2017-01-24 17:33:19,609 | MeasureProcess | INFO | Task built
+2017-01-24 17:33:19,720 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:33:20,062 | MeasureProcess | INFO | Check successful
+2017-01-24 17:33:21,220 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:33:21,223 | MeasureProcess | INFO | True
+2017-01-24 17:33:44,907 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:33:44,946 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:33:44,946 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:33:45,951 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:35:21,635 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:35:21,789 | MainProcess | INFO | Starting measure .
+2017-01-24 17:35:22,168 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:35:22,168 | MeasureProcess | INFO | Process running
+2017-01-24 17:35:22,269 | MeasureProcess | INFO | Task built
+2017-01-24 17:35:22,415 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:35:22,921 | MeasureProcess | INFO | Check successful
+2017-01-24 17:35:23,013 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:35:23,016 | MeasureProcess | INFO | True
+2017-01-24 17:35:28,296 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:35:28,322 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:35:28,322 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:35:29,322 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:38:01,904 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:38:02,092 | MainProcess | INFO | Starting measure .
+2017-01-24 17:38:02,480 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:38:02,480 | MeasureProcess | INFO | Process running
+2017-01-24 17:38:02,572 | MeasureProcess | INFO | Task built
+2017-01-24 17:38:02,657 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:38:02,997 | MeasureProcess | INFO | Check successful
+2017-01-24 17:38:03,062 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:38:03,065 | MeasureProcess | INFO | True
+2017-01-24 17:38:03,634 | MeasureProcess | INFO | 178
+2017-01-24 17:38:03,634 | MeasureProcess | ERROR | The following unhandled exception occured in Wilson :
+Traceback (most recent call last):
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tools\task_decorator.py", line 95, in decorator
+    return function_to_decorate(*args, **kwargs)
+  File "C:\Measuring\HQCMeas\hqc_meas\tasks\tasks_instr\alazar_tasks.py", line 378, in perform
+    self.driver.configure_board_decim(decimation,trigrange,triglevel)
+  File "C:\Measuring\HQCMeas\hqc_meas\instruments\dll\alazar987x.py", line 234, in configure_board_decim
+    self._dll.ETR_2p5V)
+  File "C:\Anaconda2\lib\site-packages\pyclibrary\c_library.py", line 226, in __getattr__
+    raise NameError(name)
+NameError: ETR_2p5V
+2017-01-24 17:38:03,651 | MainProcess | INFO | Measure  processed, status : FAILED
+2017-01-24 17:38:03,651 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:38:04,653 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:41:06,312 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:41:06,471 | MainProcess | INFO | Starting measure .
+2017-01-24 17:41:06,872 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:41:06,872 | MeasureProcess | INFO | Process running
+2017-01-24 17:41:06,973 | MeasureProcess | INFO | Task built
+2017-01-24 17:41:07,101 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:41:07,444 | MeasureProcess | INFO | Check successful
+2017-01-24 17:41:07,522 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:41:07,523 | MeasureProcess | INFO | True
+2017-01-24 17:41:08,095 | MeasureProcess | INFO | 178
+2017-01-24 17:41:18,121 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:41:19,997 | MainProcess | INFO | Exiting measure .
+2017-01-24 17:42:12,398 | MainProcess | INFO | Log system started.
+2017-01-24 17:42:16,532 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 17:42:16,553 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 17:42:16,553 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 17:42:16,553 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 17:42:16,559 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 17:42:37,015 | MainProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:42:38,361 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:42:38,493 | MainProcess | INFO | Starting measure .
+2017-01-24 17:42:38,884 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:42:38,885 | MeasureProcess | INFO | Process running
+2017-01-24 17:42:38,976 | MeasureProcess | INFO | Task built
+2017-01-24 17:42:39,115 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:42:39,460 | MeasureProcess | INFO | Check successful
+2017-01-24 17:42:39,533 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:42:39,536 | MeasureProcess | INFO | True
+2017-01-24 17:42:55,392 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:43:10,176 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:43:10,177 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:43:11,178 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:43:22,112 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:43:22,226 | MainProcess | INFO | Starting measure .
+2017-01-24 17:43:22,634 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:43:22,634 | MeasureProcess | INFO | Process running
+2017-01-24 17:43:22,721 | MeasureProcess | INFO | Task built
+2017-01-24 17:43:22,835 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:43:23,342 | MeasureProcess | INFO | Check successful
+2017-01-24 17:43:23,407 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:43:23,408 | MeasureProcess | INFO | True
+2017-01-24 17:43:37,869 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:43:37,917 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:43:37,918 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:43:38,937 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:43:44,832 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:43:44,997 | MainProcess | INFO | Starting measure .
+2017-01-24 17:43:45,367 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:43:45,367 | MeasureProcess | INFO | Process running
+2017-01-24 17:43:45,446 | MeasureProcess | INFO | Task built
+2017-01-24 17:43:45,569 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:43:46,404 | MeasureProcess | INFO | Check successful
+2017-01-24 17:43:46,480 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:43:46,483 | MeasureProcess | INFO | True
+2017-01-24 17:44:05,591 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:44:05,605 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:44:05,605 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:44:06,611 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:44:31,352 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:44:31,473 | MainProcess | INFO | Starting measure .
+2017-01-24 17:44:31,851 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:44:31,851 | MeasureProcess | INFO | Process running
+2017-01-24 17:44:31,947 | MeasureProcess | INFO | Task built
+2017-01-24 17:44:32,046 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:44:32,552 | MeasureProcess | INFO | Check successful
+2017-01-24 17:44:32,605 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:44:32,608 | MeasureProcess | INFO | True
+2017-01-24 17:44:36,872 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:45:03,279 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:45:03,280 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:45:04,295 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:45:17,747 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:45:17,884 | MainProcess | INFO | Starting measure .
+2017-01-24 17:45:18,265 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:45:18,266 | MeasureProcess | INFO | Process running
+2017-01-24 17:45:18,358 | MeasureProcess | INFO | Task built
+2017-01-24 17:45:18,473 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:45:19,144 | MeasureProcess | INFO | Check successful
+2017-01-24 17:45:19,220 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:45:19,224 | MeasureProcess | INFO | True
+2017-01-24 17:45:28,413 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:45:28,414 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:45:29,421 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:45:45,256 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:45:45,361 | MainProcess | INFO | Starting measure .
+2017-01-24 17:45:45,755 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:45:45,756 | MeasureProcess | INFO | Process running
+2017-01-24 17:45:45,852 | MeasureProcess | INFO | Task built
+2017-01-24 17:45:45,983 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:45:46,487 | MeasureProcess | INFO | Check successful
+2017-01-24 17:45:46,571 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:45:46,573 | MeasureProcess | INFO | True
+2017-01-24 17:45:55,762 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:45:55,763 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:45:56,776 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:46:43,737 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:46:43,891 | MainProcess | INFO | Starting measure .
+2017-01-24 17:46:44,280 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:46:44,282 | MeasureProcess | INFO | Process running
+2017-01-24 17:46:44,367 | MeasureProcess | INFO | Task built
+2017-01-24 17:46:44,486 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:46:45,158 | MeasureProcess | INFO | Check successful
+2017-01-24 17:46:45,244 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:46:45,246 | MeasureProcess | INFO | True
+2017-01-24 17:46:54,461 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:46:54,461 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:46:55,470 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:47:37,219 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:47:37,338 | MainProcess | INFO | Starting measure .
+2017-01-24 17:47:37,732 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:47:37,732 | MeasureProcess | INFO | Process running
+2017-01-24 17:47:37,834 | MeasureProcess | INFO | Task built
+2017-01-24 17:47:37,934 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:47:38,278 | MeasureProcess | INFO | Check successful
+2017-01-24 17:47:38,351 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:47:38,354 | MeasureProcess | INFO | True
+2017-01-24 17:47:47,921 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:48:08,980 | MainProcess | INFO | Measure  processed, status : INTERRUPTED
+2017-01-24 17:48:08,980 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:48:09,994 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:48:20,743 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:48:20,881 | MainProcess | INFO | Starting measure .
+2017-01-24 17:48:21,295 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:48:21,295 | MeasureProcess | INFO | Process running
+2017-01-24 17:48:21,395 | MeasureProcess | INFO | Task built
+2017-01-24 17:48:21,526 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:48:21,871 | MeasureProcess | INFO | Check successful
+2017-01-24 17:48:21,967 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:48:21,970 | MeasureProcess | INFO | True
+2017-01-24 17:48:31,240 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:48:31,240 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:48:32,253 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:48:54,029 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:48:54,153 | MainProcess | INFO | Starting measure .
+2017-01-24 17:48:54,526 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:48:54,526 | MeasureProcess | INFO | Process running
+2017-01-24 17:48:54,624 | MeasureProcess | INFO | Task built
+2017-01-24 17:48:54,710 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:48:55,219 | MeasureProcess | INFO | Check successful
+2017-01-24 17:48:55,282 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:48:55,286 | MeasureProcess | INFO | True
+2017-01-24 17:49:04,441 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:49:04,443 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:49:05,460 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:49:53,812 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:49:53,950 | MainProcess | INFO | Starting measure .
+2017-01-24 17:49:54,322 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:49:54,322 | MeasureProcess | INFO | Process running
+2017-01-24 17:49:54,398 | MeasureProcess | INFO | Task built
+2017-01-24 17:49:54,533 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:49:55,039 | MeasureProcess | INFO | Check successful
+2017-01-24 17:49:55,141 | MeasureProcess | INFO | before loop: False
+2017-01-24 17:49:55,142 | MeasureProcess | INFO | True
+2017-01-24 17:50:04,257 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:50:04,259 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:50:05,267 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:52:43,040 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:52:43,078 | MainProcess | INFO | Starting measure .
+2017-01-24 17:52:43,568 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:52:43,568 | MeasureProcess | INFO | Process running
+2017-01-24 17:52:43,601 | MeasureProcess | INFO | Task built
+2017-01-24 17:52:43,651 | MeasureProcess | INFO | Check successful
+2017-01-24 17:52:43,693 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:52:43,693 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:52:44,691 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:53:02,378 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:53:02,414 | MainProcess | INFO | Starting measure .
+2017-01-24 17:53:02,848 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:53:02,848 | MeasureProcess | INFO | Process running
+2017-01-24 17:53:02,894 | MeasureProcess | INFO | Task built
+2017-01-24 17:53:02,947 | MeasureProcess | INFO | Check successful
+2017-01-24 17:53:02,992 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:53:02,993 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:53:04,006 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:53:25,640 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:53:25,673 | MainProcess | INFO | Starting measure .
+2017-01-24 17:53:26,131 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:53:26,131 | MeasureProcess | INFO | Process running
+2017-01-24 17:53:26,177 | MeasureProcess | INFO | Task built
+2017-01-24 17:53:26,239 | MeasureProcess | INFO | Check successful
+2017-01-24 17:53:26,286 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:53:26,286 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:53:27,286 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:56:45,595 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:56:45,631 | MainProcess | INFO | Starting measure .
+2017-01-24 17:56:46,098 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:56:46,099 | MeasureProcess | INFO | Process running
+2017-01-24 17:56:46,135 | MeasureProcess | INFO | Task built
+2017-01-24 17:56:46,187 | MeasureProcess | INFO | Check successful
+2017-01-24 17:56:46,230 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:56:46,230 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:56:47,244 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:58:23,914 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:58:23,963 | MainProcess | INFO | Starting measure .
+2017-01-24 17:58:24,453 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:58:24,453 | MeasureProcess | INFO | Process running
+2017-01-24 17:58:24,492 | MeasureProcess | INFO | Task built
+2017-01-24 17:58:24,556 | MeasureProcess | INFO | Check successful
+2017-01-24 17:58:24,595 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:58:24,596 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:58:25,598 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:06:00,657 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:06:00,700 | MainProcess | INFO | Starting measure .
+2017-01-24 18:06:01,216 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:06:01,217 | MeasureProcess | INFO | Process running
+2017-01-24 18:06:01,266 | MeasureProcess | INFO | Task built
+2017-01-24 18:06:01,319 | MeasureProcess | INFO | Check successful
+2017-01-24 18:06:01,355 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:06:01,355 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:06:02,358 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:06:18,592 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:06:18,647 | MainProcess | INFO | Starting measure .
+2017-01-24 18:06:19,130 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:06:19,130 | MeasureProcess | INFO | Process running
+2017-01-24 18:06:19,171 | MeasureProcess | INFO | Task built
+2017-01-24 18:06:19,246 | MeasureProcess | INFO | Check successful
+2017-01-24 18:06:19,298 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:06:19,298 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:06:20,313 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:06:38,296 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:06:38,332 | MainProcess | INFO | Starting measure .
+2017-01-24 18:06:38,809 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:06:38,809 | MeasureProcess | INFO | Process running
+2017-01-24 18:06:38,855 | MeasureProcess | INFO | Task built
+2017-01-24 18:06:38,908 | MeasureProcess | INFO | Check successful
+2017-01-24 18:06:38,950 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:06:38,950 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:06:39,948 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:09:57,346 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:09:57,397 | MainProcess | INFO | Starting measure .
+2017-01-24 18:09:57,920 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:09:57,921 | MeasureProcess | INFO | Process running
+2017-01-24 18:09:57,964 | MeasureProcess | INFO | Task built
+2017-01-24 18:09:58,022 | MeasureProcess | INFO | Check successful
+2017-01-24 18:09:58,069 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:09:58,069 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:09:59,071 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:19:34,124 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:19:34,167 | MainProcess | INFO | Starting measure .
+2017-01-24 18:19:34,678 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:19:34,680 | MeasureProcess | INFO | Process running
+2017-01-24 18:19:34,714 | MeasureProcess | INFO | Task built
+2017-01-24 18:19:34,776 | MeasureProcess | INFO | Check successful
+2017-01-24 18:19:34,783 | MeasureProcess | INFO | P05069999Z0
+2017-01-24 18:19:34,803 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:19:34,803 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:19:35,811 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:20:14,009 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:20:14,069 | MainProcess | INFO | Starting measure .
+2017-01-24 18:20:14,529 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:20:14,529 | MeasureProcess | INFO | Process running
+2017-01-24 18:20:14,576 | MeasureProcess | INFO | Task built
+2017-01-24 18:20:14,638 | MeasureProcess | INFO | Check successful
+2017-01-24 18:20:14,647 | MeasureProcess | INFO | 5.07
+2017-01-24 18:20:14,647 | MeasureProcess | INFO | P05069999Z0
+2017-01-24 18:20:14,681 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:20:14,681 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:20:15,694 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:20:45,927 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:20:45,990 | MainProcess | INFO | Starting measure .
+2017-01-24 18:20:46,467 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:20:46,467 | MeasureProcess | INFO | Process running
+2017-01-24 18:20:46,549 | MeasureProcess | INFO | Task built
+2017-01-24 18:20:46,608 | MeasureProcess | INFO | Check successful
+2017-01-24 18:20:46,615 | MeasureProcess | INFO | 5.07
+2017-01-24 18:20:46,617 | MeasureProcess | INFO | 5070000.0
+2017-01-24 18:20:46,618 | MeasureProcess | INFO | P05069999Z0
+2017-01-24 18:20:46,658 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:20:46,658 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:20:47,674 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:21:03,664 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:21:03,711 | MainProcess | INFO | Starting measure .
+2017-01-24 18:21:04,177 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:21:04,177 | MeasureProcess | INFO | Process running
+2017-01-24 18:21:04,226 | MeasureProcess | INFO | Task built
+2017-01-24 18:21:04,283 | MeasureProcess | INFO | Check successful
+2017-01-24 18:21:04,292 | MeasureProcess | INFO | 5.07
+2017-01-24 18:21:04,292 | MeasureProcess | INFO | 5069999
+2017-01-24 18:21:04,292 | MeasureProcess | INFO | P05069999Z0
+2017-01-24 18:21:04,332 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:21:04,334 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:21:05,339 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:22:40,697 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:22:40,752 | MainProcess | INFO | Starting measure .
+2017-01-24 18:22:41,266 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:22:41,266 | MeasureProcess | INFO | Process running
+2017-01-24 18:22:41,319 | MeasureProcess | INFO | Task built
+2017-01-24 18:22:41,380 | MeasureProcess | INFO | Check successful
+2017-01-24 18:22:41,388 | MeasureProcess | INFO | 5.07
+2017-01-24 18:22:41,388 | MeasureProcess | INFO | 0.999999999069
+2017-01-24 18:22:41,388 | MeasureProcess | INFO | P05069999Z0
+2017-01-24 18:22:41,433 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:22:41,434 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:22:42,423 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:23:54,677 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:23:54,723 | MainProcess | INFO | Starting measure .
+2017-01-24 18:23:55,171 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:23:55,171 | MeasureProcess | INFO | Process running
+2017-01-24 18:23:55,210 | MeasureProcess | INFO | Task built
+2017-01-24 18:23:55,267 | MeasureProcess | INFO | Check successful
+2017-01-24 18:23:55,276 | MeasureProcess | INFO | 5.07
+2017-01-24 18:23:55,276 | MeasureProcess | INFO | -9.31322574615e-10
+2017-01-24 18:23:55,276 | MeasureProcess | INFO | P05069999Z0
+2017-01-24 18:23:55,318 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:23:55,318 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:23:56,305 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:24:29,953 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:24:30,003 | MainProcess | INFO | Starting measure .
+2017-01-24 18:24:30,517 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:24:30,519 | MeasureProcess | INFO | Process running
+2017-01-24 18:24:30,575 | MeasureProcess | INFO | Task built
+2017-01-24 18:24:30,632 | MeasureProcess | INFO | Check successful
+2017-01-24 18:24:30,641 | MeasureProcess | INFO | P05070000Z0
+2017-01-24 18:24:30,677 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:24:30,677 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:24:31,688 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:25:10,911 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:25:10,950 | MainProcess | INFO | Starting measure .
+2017-01-24 18:25:11,460 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:25:11,460 | MeasureProcess | INFO | Process running
+2017-01-24 18:25:11,503 | MeasureProcess | INFO | Task built
+2017-01-24 18:25:11,562 | MeasureProcess | INFO | Check successful
+2017-01-24 18:25:11,607 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:25:11,608 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:25:12,611 | MeasureProcess | INFO | Process shuting down
