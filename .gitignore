@@ -55,3 +55,6 @@ docs/build
 
 # Instruments and sequences
 *.ini
+
+# Logs
+*.log
