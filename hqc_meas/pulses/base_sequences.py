@@ -716,7 +716,7 @@ class RootSequence(Sequence):
                                           missings, errors)
 
         if not res:
-            return False, (missings, errors)
+            return False, (missings, errors), None
 
         if self.time_constrained:
             err = [p for p in pulses if p.stop > duration]
@@ -726,10 +726,10 @@ class RootSequence(Sequence):
                         is larger than the duration of the sequence.''')
                 ind = [p.index for p in err]
                 errors['Root-stop'] = mess.format(ind)
-                return False, (missings, errors)
+                return False, (missings, errors), None
 
         if not use_context:
-            return True, pulses
+            return True, pulses, None
 
         else:
             kwargs = {}

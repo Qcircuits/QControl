@@ -32,13 +32,13 @@ class TransferPulseLoopTask(InterfaceableTaskMixin, InstrumentTask):
     #: Loop variables: loop parameters
     #: names, start value, stop value and number of points per loop
     
-    loop_names = Str().tag(pref=True)
+    loop_names = Str('var').tag(pref=True)
     
-    loop_start = Str().tag(pref=True)
+    loop_start = Str('0').tag(pref=True)
 
-    loop_stop = Str().tag(pref=True)
+    loop_stop = Str('1').tag(pref=True)
 
-    loop_points = Str().tag(pref=True)
+    loop_points = Str('1').tag(pref=True)
       
     def intricate_loops(self, var_count, variables):
         loop_points = np.array(self.format_and_eval_string(self.loop_points))
@@ -96,11 +96,10 @@ class TransferPulseLoopTask(InterfaceableTaskMixin, InstrumentTask):
                     mess = 'Invalid context, instrument combination : {}, {}'
                     traceback[err_path+'context'] = \
                         mess.format(self.driver, self.sequence.context)
-    
             else:
                 test = False
                 traceback[err_path+'seq'] = 'No interface or sequence'
-        
+    
         return test, traceback
 
     def compile_loop(self, loop_names, value):

@@ -146,6 +146,7 @@ class Alazar987x(DllInstrument):
         self._dll.SetBWLimit(board, self._dll.CHANNEL_B, 0)
         # TODO: Select trigger inputs and levels as required.
         trigCode = int(128 + 127 * trigLevel / trigRange)
+        print trigCode
         self._dll.SetTriggerOperation(board, self._dll.TRIG_ENGINE_OP_J,
                                       self._dll.TRIG_ENGINE_J,
                                       self._dll.TRIG_EXTERNAL,
@@ -162,7 +163,7 @@ class Alazar987x(DllInstrument):
                                      self._dll.ETR_5V)
         else:
             self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
-                                     self._dll.ETR_2p5V)
+                                     self._dll.ETR_2V5)
 
         # TODO: Set trigger delay as required.
         triggerDelay_sec = 0.
@@ -212,21 +213,24 @@ class Alazar987x(DllInstrument):
                                self._dll.IMPEDANCE_50_OHM)
 
         # TODO: Select channel B bandwidth limit as required.
-        self._dll.SetBWLimit(board, self._dll.CHANNEL_B, 0)
-        # TODO: Select trigger inputs and levels as required.
+        trigCode = int(128 + 127 * trigLevel / trigRange)
         self._dll.SetTriggerOperation(board, self._dll.TRIG_ENGINE_OP_J,
                                       self._dll.TRIG_ENGINE_J,
                                       self._dll.TRIG_EXTERNAL,
                                       self._dll.TRIGGER_SLOPE_POSITIVE,
-                                      138,
+                                      trigCode,
                                       self._dll.TRIG_ENGINE_K,
                                       self._dll.TRIG_DISABLE,
                                       self._dll.TRIGGER_SLOPE_POSITIVE,
                                       128)
 
         # TODO: Select external trigger parameters as required.
-        self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
+        if trigRange == 5:
+            self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
                                      self._dll.ETR_5V)
+        else:
+            self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
+                                     self._dll.ETR_2V5)
 
         # TODO: Set trigger delay as required.
         triggerDelay_sec = 0.
