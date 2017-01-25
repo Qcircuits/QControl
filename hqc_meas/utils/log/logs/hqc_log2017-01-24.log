@@ -405,3 +405,118 @@ ValueError: NumPy boolean array indexing assignment cannot assign 0 input values
 2017-01-24 14:51:26,737 | MainProcess | INFO | Measure  processed, status : COMPLETED
 2017-01-24 14:51:26,737 | MainProcess | INFO | Stopping measure .
 2017-01-24 14:51:27,740 | MeasureProcess | INFO | Process shuting down
+2017-01-24 15:53:53,424 | MainProcess | INFO | Log system started.
+2017-01-24 15:54:01,740 | MainProcess | CRITICAL | Traceback (most recent call last):
+2017-01-24 15:54:01,740 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\qt\q_deferred_caller.py", line 42, in customEvent
+2017-01-24 15:54:01,740 | MainProcess | CRITICAL | event.callback(*event.args, **event.kwargs)
+2017-01-24 15:54:01,740 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\workbench\ui\workbench_menus.enaml", line 24, in invoke_action
+2017-01-24 15:54:01,822 | MainProcess | CRITICAL | core.invoke_command(item.command, item.parameters, item)
+2017-01-24 15:54:01,822 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\workbench\core\core_plugin.py", line 80, in invoke_command
+2017-01-24 15:54:01,822 | MainProcess | CRITICAL | return command.handler(event)
+2017-01-24 15:54:01,822 | MainProcess | CRITICAL | File "D:\Software\Python Meas\QControl\hqc_meas\utils\preferences\manifest.enaml", line 46, in load_preferences
+2017-01-24 15:54:01,822 | MainProcess | CRITICAL | name_filters=['*.ini'])
+2017-01-24 15:54:01,822 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\widgets\file_dialog_ex.py", line 130, in get_open_file_name
+2017-01-24 15:54:01,823 | MainProcess | CRITICAL | dialog = FileDialogEx(parent, **kwargs)
+2017-01-24 15:54:01,823 | MainProcess | CRITICAL | File "C:\Anaconda2\lib\site-packages\enaml\core\object.py", line 98, in __init__
+2017-01-24 15:54:01,823 | MainProcess | CRITICAL | super(Object, self).__init__(**kwargs)
+2017-01-24 15:54:01,823 | MainProcess | CRITICAL | TypeError
+2017-01-24 15:54:01,823 | MainProcess | CRITICAL | :
+2017-01-24 15:54:01,823 | MainProcess | CRITICAL | The 'current_path' member on the 'FileDialogEx' object must be of type 'str'. Got object of type 'NoneType' instead.
+2017-01-24 15:57:24,246 | MainProcess | INFO | Log system started.
+2017-01-24 15:57:26,710 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:01:22,823 | MainProcess | INFO | Invalid pref path
+2017-01-24 16:01:24,796 | MainProcess | INFO | Log system started.
+2017-01-24 16:01:32,756 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 16:01:32,882 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 16:01:32,882 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 16:01:32,882 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 16:01:32,891 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 16:01:41,427 | MainProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 16:01:45,499 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 16:01:45,551 | MainProcess | INFO | Starting measure .
+2017-01-24 16:01:45,905 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 16:01:45,907 | MeasureProcess | INFO | Process running
+2017-01-24 16:01:45,948 | MeasureProcess | INFO | Task built
+2017-01-24 16:01:45,950 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 16:01:46,303 | MeasureProcess | INFO | Check successful
+2017-01-24 16:01:59,387 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 16:01:59,388 | MainProcess | INFO | Stopping measure .
+2017-01-24 16:02:00,395 | MeasureProcess | INFO | Process shuting down
+2017-01-24 16:29:20,398 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 16:29:20,453 | MainProcess | INFO | Starting measure .
+2017-01-24 16:29:20,839 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 16:29:20,839 | MeasureProcess | INFO | Process running
+2017-01-24 16:29:20,871 | MeasureProcess | INFO | Task built
+2017-01-24 16:29:20,874 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 16:29:21,223 | MeasureProcess | INFO | Check successful
+2017-01-24 16:29:34,305 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 16:29:34,306 | MainProcess | INFO | Stopping measure .
+2017-01-24 16:29:35,316 | MeasureProcess | INFO | Process shuting down
+2017-01-24 16:30:18,954 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 16:30:19,009 | MainProcess | INFO | Starting measure .
+2017-01-24 16:30:19,361 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 16:30:19,361 | MeasureProcess | INFO | Process running
+2017-01-24 16:30:19,384 | MeasureProcess | INFO | Task built
+2017-01-24 16:30:19,387 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 16:30:19,901 | MeasureProcess | INFO | Check successful
+2017-01-24 16:30:32,994 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 16:30:32,994 | MainProcess | INFO | Stopping measure .
+2017-01-24 16:30:34,012 | MeasureProcess | INFO | Process shuting down
+2017-01-24 16:31:53,470 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 16:31:53,523 | MainProcess | INFO | Starting measure .
+2017-01-24 16:31:53,890 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 16:31:53,891 | MeasureProcess | INFO | Process running
+2017-01-24 16:31:53,921 | MeasureProcess | INFO | Task built
+2017-01-24 16:31:53,923 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 16:31:54,438 | MeasureProcess | INFO | Check successful
+2017-01-24 16:32:07,507 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 16:32:07,507 | MainProcess | INFO | Stopping measure .
+2017-01-24 16:32:08,513 | MeasureProcess | INFO | Process shuting down
+2017-01-24 16:32:14,821 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 16:32:14,871 | MainProcess | INFO | Starting measure .
+2017-01-24 16:32:15,221 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 16:32:15,223 | MeasureProcess | INFO | Process running
+2017-01-24 16:32:15,246 | MeasureProcess | INFO | Task built
+2017-01-24 16:32:15,247 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 16:32:15,599 | MeasureProcess | INFO | Check successful
+2017-01-24 16:33:03,980 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 16:33:03,980 | MainProcess | INFO | Stopping measure .
+2017-01-24 16:33:04,996 | MeasureProcess | INFO | Process shuting down
+2017-01-24 16:38:04,440 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 16:38:04,492 | MainProcess | INFO | Starting measure .
+2017-01-24 16:38:04,868 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 16:38:04,868 | MeasureProcess | INFO | Process running
+2017-01-24 16:38:04,911 | MeasureProcess | INFO | Task built
+2017-01-24 16:38:04,914 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 16:38:05,273 | MeasureProcess | INFO | Check successful
+2017-01-24 16:38:53,813 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 16:38:53,815 | MainProcess | INFO | Stopping measure .
+2017-01-24 16:38:54,828 | MeasureProcess | INFO | Process shuting down
+2017-01-24 17:00:36,964 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 17:00:37,019 | MainProcess | INFO | Starting measure .
+2017-01-24 17:00:37,381 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 17:00:37,381 | MeasureProcess | INFO | Process running
+2017-01-24 17:00:37,417 | MeasureProcess | INFO | Task built
+2017-01-24 17:00:37,418 | MeasureProcess | WARNING | Automatic initialisation based on OS detection
+2017-01-24 17:00:37,933 | MeasureProcess | INFO | Check successful
+2017-01-24 17:01:26,388 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 17:01:26,388 | MainProcess | INFO | Stopping measure .
+2017-01-24 17:01:27,395 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:12:23,502 | MainProcess | INFO | Log system started.
+2017-01-24 18:12:53,355 | MainProcess | ERROR | Failed to import sequences.repeat_sequence : No module named pulses
+2017-01-24 18:12:53,374 | MainProcess | INFO | {'AWG': <class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, 'TaborAWG': <class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, 'Template': <class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>}
+2017-01-24 18:12:53,374 | MainProcess | INFO | {'TemplateContext': <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>, 'AWGContext': <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>, 'TABORContext': <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>}
+2017-01-24 18:12:53,374 | MainProcess | INFO | {'AWG': (<class 'hqc_meas.pulses.contexts.awg_context.AWGContext'>, <enamldef 'hqc_meas.pulses.contexts.views.awg_context_view.AWGContextView'>), 'TaborAWG': (<class 'hqc_meas.pulses.contexts.tabor_context.TABORContext'>, <enamldef 'hqc_meas.pulses.contexts.views.tabor_context_view.TaborContextView'>), 'Template': (<class 'hqc_meas.pulses.contexts.template_context.TemplateContext'>, <enamldef 'hqc_meas.pulses.contexts.views.template_context_view.TemplateContextView'>)}
+2017-01-24 18:12:53,382 | MainProcess | ERROR | Failed to import shapes.views.arbitrary_shape_view : invalid syntax (Enaml, line 40)
+2017-01-24 18:12:53,437 | MainProcess | CRITICAL | C:\Anaconda2\lib\site-packages\pyvisa\legacy\visa.py:88: UserWarning: Warning filter not found
+  _removefilter("ignore", "VI_SUCCESS_DEV_NPRESENT")
+2017-01-24 18:12:54,887 | MainProcess | INFO | The use of the instrument profiles has been granted by the manager.
+2017-01-24 18:12:54,907 | MainProcess | INFO | Starting measure .
+2017-01-24 18:12:55,266 | MeasureProcess | INFO | Logger parametrised
+2017-01-24 18:12:55,266 | MeasureProcess | INFO | Process running
+2017-01-24 18:12:55,404 | MeasureProcess | INFO | Task built
+2017-01-24 18:12:55,448 | MeasureProcess | INFO | Check successful
+2017-01-24 18:12:55,493 | MainProcess | INFO | Measure  processed, status : COMPLETED
+2017-01-24 18:12:55,493 | MainProcess | INFO | Stopping measure .
+2017-01-24 18:12:56,509 | MeasureProcess | INFO | Process shuting down
+2017-01-24 18:15:10,776 | MainProcess | INFO | Invalid pref path
