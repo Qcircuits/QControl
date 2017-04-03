@@ -488,12 +488,13 @@ class Alazar987x(DllInstrument):
         return answerDemod, answerTrace
 
     def get_traces(self, timeaftertrig, recordsPerCapture,
-                   recordsPerBuffer, average):
-
+                   recordsPerBuffer, average, decimation):
+#        print("records per buffer" + str(recordsPerBuffer))
+#        print("records per capture" + str(recordsPerCapture))
         board = self._dll.GetBoardBySystemID(1, 1)()
 
         # Number of samples per record: must be divisible by 32
-        samplesPerSec = 1000000000.0
+        samplesPerSec = 1000000000.0/decimation
         samplesPerTrace = samplesPerSec*timeaftertrig
         if samplesPerTrace % 32 == 0:
             samplesPerRecord = int(samplesPerTrace)
@@ -514,6 +515,7 @@ class Alazar987x(DllInstrument):
         bytesPerBuffer = int(bytesPerRecord * recordsPerBuffer*channel_number)
 
         bufferCount = 4
+        print(bytesPerBuffer*4)
         buffers = []
         for i in range(bufferCount):
             buffers.append(DMABuffer(bytesPerSample, bytesPerBuffer))
@@ -551,6 +553,7 @@ class Alazar987x(DllInstrument):
 
         dataA = np.empty((recordsPerCapture, samplesPerRecord))
         dataB = np.empty((recordsPerCapture, samplesPerRecord))
+#        print(len(dataA))
 
         buffersCompleted = 0
         while buffersCompleted < buffersPerAcquisition:
@@ -565,7 +568,7 @@ class Alazar987x(DllInstrument):
             buffersCompleted += 1
 
             self._dll.PostAsyncBuffer(board, buffer.addr, buffer.size_bytes)
-
+ 
         self._dll.AbortAsyncRead(board)
 
         for buffer in buffers:

@@ -257,6 +257,13 @@ enamldef TracesAlazarView(BaseInstrumentView): view:
         text = 'Trigger level (V)'
     Field: trigLevel_val:
         text := task.triglevel
+        
+    Label: decimation:
+        text = 'Decimation'
+    Field: decimation_val:
+        text := task.decimation
+        tool_tip = fill(cleandoc(
+                        '''Card decimation. Must be either 1, 2, 4 or a multiple of 10 up to 100000'''))
 
 enamldef PhaseAlazarView(BaseInstrumentView): view:
 
