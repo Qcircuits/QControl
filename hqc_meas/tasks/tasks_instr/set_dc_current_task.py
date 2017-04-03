@@ -76,7 +76,8 @@ class SetDCCurrentTask(InterfaceableTaskMixin, InstrumentTask):
         
         print 'Setting current'
         self.smooth_set(value, setter, current_value)
-
+        print 'Current set'
+        
     def smooth_set(self, target_value, setter, current_value):
         """ Smoothly set the current.
 

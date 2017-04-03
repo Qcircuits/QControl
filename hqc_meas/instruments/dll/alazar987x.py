@@ -146,7 +146,6 @@ class Alazar987x(DllInstrument):
         self._dll.SetBWLimit(board, self._dll.CHANNEL_B, 0)
         # TODO: Select trigger inputs and levels as required.
         trigCode = int(128 + 127 * trigLevel / trigRange)
-        print trigCode
         self._dll.SetTriggerOperation(board, self._dll.TRIG_ENGINE_OP_J,
                                       self._dll.TRIG_ENGINE_J,
                                       self._dll.TRIG_EXTERNAL,
