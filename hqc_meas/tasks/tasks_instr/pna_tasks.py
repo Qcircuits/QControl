@@ -72,7 +72,7 @@ class PNASetRFFrequencyInterface(InstrTaskInterface):
     # Driver for the channel.
     channel_driver = Value()
 
-    driver_list = ['AgilentPNA','RhodeandSchwarzVNA']
+    driver_list = ['AgilentPNA','RhodeandSchwarzVNA','KeysightENA']
 
     has_view = True
 
@@ -115,7 +115,7 @@ class PNASetRFPowerInterface(InstrTaskInterface):
     # Port whose output power should be set.
     port = Int(1).tag(pref=True)
 
-    driver_list = ['AgilentPNA','RhodeandSchwarzVNA']
+    driver_list = ['AgilentPNA','RhodeandSchwarzVNA','KeysightENA']
 
     has_view = True
 
@@ -183,7 +183,7 @@ class PNASinglePointMeasureTask(SingleChannelPNATask):
     if_bandwidth = Int(2).tag(pref=True)
     window = Int(1).tag(pref=True)
 
-    driver_list = ['AgilentPNA','RhodeandSchwarzVNA']
+    driver_list = ['AgilentPNA','RhodeandSchwarzVNA','KeysightENA']
 
     wait = set_default({'activated': True, 'wait': ['instr']})
 
@@ -308,7 +308,7 @@ class PNASweepTask(SingleChannelPNATask):
     window = Int(1).tag(pref=True)
 
     wait = set_default({'activated': True, 'wait': ['instr']})
-    driver_list = ['AgilentPNA','RhodeandSchwarzVNA']
+    driver_list = ['AgilentPNA','RhodeandSchwarzVNA','KeysightENA']
     task_database_entries = set_default({'sweep_data': np.array([0])})
 
     def perform(self):
@@ -443,7 +443,7 @@ class PNAGetTraces(InstrumentTask):
     tracelist = Str('1,1').tag(pref=True)
     already_measured = Bool(False).tag(pref=True)
 
-    driver_list = ['AgilentPNA','RhodeandSchwarzVNA']
+    driver_list = ['AgilentPNA','RhodeandSchwarzVNA','KeysightENA']
     task_database_entries = set_default({'sweep_data': {}})
 
     def perform(self):
@@ -493,8 +493,8 @@ class PNAGetTraces(InstrumentTask):
                 np.absolute(complexdata),
                 np.unwrap(np.angle(complexdata))]
 
-        return np.rec.fromarrays(aux, names=['Freq (GHz)', measname+' real',
-                    measname+' imag',  measname+' abs',  measname+' phase' ])
+        return np.rec.fromarrays(aux, names=['Freq (GHz)', str(measname)+' real',
+                    str(measname)+' imag',  str(measname)+' abs',  str(measname)+' phase' ])
 
     def check(self, *args, **kwargs):
         """
@@ -518,7 +518,7 @@ class GetMarkerPosition(InstrumentTask):
 
     tracelist = Str('1,1').tag(pref=True)
 
-    driver_list = ['AgilentPNA','RhodeandSchwarzVNA']
+    driver_list = ['AgilentPNA','RhodeandSchwarzVNA','KeysightENA']
 
     has_view = True
 
