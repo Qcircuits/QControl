@@ -6,7 +6,7 @@
 # =============================================================================
 """
 """
-from atom.api import (Float, Str, set_default)
+from atom.api import (Float, Str, set_default, Enum)
 
 import time
 import logging
@@ -15,6 +15,27 @@ from inspect import cleandoc
 from hqc_meas.tasks.api import (InstrumentTask,
                                 InterfaceableTaskMixin)
 
+
+class SetDCCurrentRangeTask(InterfaceableTaskMixin, InstrumentTask):
+    """Set a DC current range to the specified value.
+
+    """    
+    
+    current_range = Enum('1 mA', '10 mA', '100 mA').tag(pref=True)
+    loopable = True
+    driver_list = ['Yokogawa7651']
+    task_database_entries = set_default({'current_range': '1 mA'})
+    
+    def check(self, *args, **kwargs):
+        test, traceback = super(SetDCCurrentRangeTask, self).check(*args, **kwargs)
+        return test, traceback
+        
+    def i_perform(self, value=None):
+        if not self.driver:
+            self.start_driver()
+        if self.driver.owner != self.task_name:
+            self.driver.owner = self.task_name    
+        setattr(self.driver, 'current_range', str(self.current_range))
 
 class SetDCCurrentTask(InterfaceableTaskMixin, InstrumentTask):
     """Set a DC current to the specified value.
@@ -38,7 +59,7 @@ class SetDCCurrentTask(InterfaceableTaskMixin, InstrumentTask):
     loopable = True
     task_database_entries = set_default({'current': 0.01})
 
-    driver_list = ['Yokogawa7651']
+    driver_list = ['YokogawaGS200', 'Yokogawa7651']
 
     def check(self, *args, **kwargs):
         """
@@ -76,7 +97,8 @@ class SetDCCurrentTask(InterfaceableTaskMixin, InstrumentTask):
         
         print 'Setting current'
         self.smooth_set(value, setter, current_value)
-
+        print 'Current set'
+        
     def smooth_set(self, target_value, setter, current_value):
         """ Smoothly set the current.
 
@@ -132,4 +154,4 @@ class SetDCCurrentTask(InterfaceableTaskMixin, InstrumentTask):
         self.write_in_database('current', last_value)
 
 
-KNOWN_PY_TASKS = [SetDCCurrentTask]
+KNOWN_PY_TASKS = [SetDCCurrentTask, SetDCCurrentRangeTask]

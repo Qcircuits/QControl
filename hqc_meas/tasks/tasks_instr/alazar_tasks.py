@@ -53,6 +53,9 @@ class DemodAlazarTask(InstrumentTask):
     trigrange = Enum('2.5V','5V').tag(pref=True)
 
     triglevel = Str('0.3').tag(pref=True)
+    
+    parallel = set_default({'activated': False, 'pool': 'acq'})
+
 
     driver_list = ['Alazar935x','Alazar987x']
 
@@ -223,6 +226,10 @@ class TracesAlazarTask(InstrumentTask):
     trigrange = Enum('2.5V','5V').tag(pref=True)
 
     triglevel = Str('0.3').tag(pref=True)
+    
+    decimation = Str('1').tag(pref=True)
+            
+    parallel = set_default({'activated': False, 'pool': 'acq'})
 
     driver_list = ['Alazar935x','Alazar987x']
 
@@ -235,11 +242,18 @@ class TracesAlazarTask(InstrumentTask):
         test, traceback = super(TracesAlazarTask, self).check(*args,
                                                               **kwargs)
 
+        decimation = int(self.format_and_eval_string(self.decimation))
+       
         if (self.format_and_eval_string(self.tracesnumber) %
                 self.format_and_eval_string(self.tracesbuffer)) != 0:
             test = False
             traceback[self.task_path + '/' + self.task_name + '-get_traces'] =\
                 cleandoc('''The number of buffers used must be an integer.''')
+                
+        if decimation not in (1,2,4) and decimation % 10 !=0:
+            test = False
+            traceback[self.task_path + '/' + self.task_name + '-get_demod'] = \
+                           cleandoc('''Decimation needs to be 1,2,4 or a multiple of 10 up to 100000''')
 
         return test, traceback
 
@@ -258,17 +272,20 @@ class TracesAlazarTask(InstrumentTask):
             trigrange = 2.5
 
         triglevel = self.format_and_eval_string(self.triglevel)
+        
+        decimation = int(self.format_and_eval_string(self.decimation))
 
-        self.driver.configure_board(trigrange,triglevel)
+        self.driver.configure_board_decim(decimation,trigrange,triglevel)
 
-        recordsPerCapture = int(max(1000,
-                            self.format_and_eval_string(self.tracesnumber)))
+#        recordsPerCapture = int(max(1000,
+#                            self.format_and_eval_string(self.tracesnumber)))
+        recordsPerCapture = int(self.format_and_eval_string(self.tracesnumber))
 
         recordsPerBuffer = int(self.format_and_eval_string(self.tracesbuffer))
 
         answer = self.driver.get_traces(
             self.format_and_eval_string(self.timeaftertrig)*10**-6,
-            recordsPerCapture, recordsPerBuffer, self.average
+            recordsPerCapture, recordsPerBuffer, self.average, decimation
             )
 
         traceA, traceB = answer

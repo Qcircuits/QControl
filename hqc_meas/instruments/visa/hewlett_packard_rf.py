@@ -77,11 +77,11 @@ class HewlettPackard8276A(VisaInstrument):
         """
         unit = self.frequency_unit
         if unit == 'GHz':
-            value = value*10**6
+            value = round(value*10**6)
         elif unit == 'MHz':
-            value = value*10**3
+            value = round(value*10**3)
         elif unit == 'KHz':
-            value = value
+            value = round(value)
         ref = 10**7
         Nzeros = 0
         c = value

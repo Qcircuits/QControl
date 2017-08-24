@@ -55,6 +55,11 @@ class YokogawaGS200(VisaInstrument):
             return voltage
         else:
             raise InstrIOError('Instrument did not return the voltage')
+            
+    @instrument_property
+    @secure_communication()
+    def current(self):
+        return self.ask_for_values(":SOURce:LEVel?")[0]
 
     @voltage.setter
     @secure_communication()
@@ -66,6 +71,11 @@ class YokogawaGS200(VisaInstrument):
         #to avoid floating point rouding
         if abs(value - round(set_point, 9)) > 10**-9:
             raise InstrIOError('Instrument did not set correctly the voltage')
+
+    @current.setter
+    @secure_communication()
+    def current(self, set_point):
+        self.write(":SOURce:LEVel {}".format(set_point))
 
     @instrument_property
     @secure_communication()
@@ -267,6 +277,41 @@ class Yokogawa7651(VisaInstrument):
         #to avoid floating point rouding
         if abs(value - round(set_point, 9)) > 10**-9:
             raise InstrIOError('Instrument did not set correctly the current')
+            
+    @instrument_property
+    @secure_communication()
+    def current_range(self):
+        self.write('OS')        
+        self.read()
+        curr_range = self.read()[2:4]
+        self.read()
+        self.read()
+        self.read()
+        if curr_range == 'R4':
+            return '1 mA'
+        elif curr_range == 'R5':
+            return '10 mA'
+        else:
+            return '100 mA'
+            
+    @current_range.setter
+    @secure_communication()
+    def current_range(self, v_range):
+        """Current range setter method.
+
+        NB: does not check the current function.
+        switches to current mode as well
+
+        """
+        visa_range = ''
+        if v_range == '1 mA':
+            visa_range = 'F5R4E'
+        elif v_range == '10 mA':
+            visa_range = 'F5R5E'
+        elif v_range == '100 mA':
+            visa_range = 'F5R6E'
+
+        self.write(visa_range)
 
     @instrument_property
     @secure_communication()

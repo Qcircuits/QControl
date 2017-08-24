@@ -162,7 +162,7 @@ class Alazar987x(DllInstrument):
                                      self._dll.ETR_5V)
         else:
             self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
-                                     self._dll.ETR_2p5V)
+                                     self._dll.ETR_2V5)
 
         # TODO: Set trigger delay as required.
         triggerDelay_sec = 0.
@@ -212,21 +212,24 @@ class Alazar987x(DllInstrument):
                                self._dll.IMPEDANCE_50_OHM)
 
         # TODO: Select channel B bandwidth limit as required.
-        self._dll.SetBWLimit(board, self._dll.CHANNEL_B, 0)
-        # TODO: Select trigger inputs and levels as required.
+        trigCode = int(128 + 127 * trigLevel / trigRange)
         self._dll.SetTriggerOperation(board, self._dll.TRIG_ENGINE_OP_J,
                                       self._dll.TRIG_ENGINE_J,
                                       self._dll.TRIG_EXTERNAL,
                                       self._dll.TRIGGER_SLOPE_POSITIVE,
-                                      138,
+                                      trigCode,
                                       self._dll.TRIG_ENGINE_K,
                                       self._dll.TRIG_DISABLE,
                                       self._dll.TRIGGER_SLOPE_POSITIVE,
                                       128)
 
         # TODO: Select external trigger parameters as required.
-        self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
+        if trigRange == 5:
+            self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
                                      self._dll.ETR_5V)
+        else:
+            self._dll.SetExternalTrigger(board, self._dll.DC_COUPLING,
+                                     self._dll.ETR_2V5)
 
         # TODO: Set trigger delay as required.
         triggerDelay_sec = 0.
@@ -280,7 +283,8 @@ class Alazar987x(DllInstrument):
         bitsPerSample = 8
         code = (1 << (bitsPerSample - 1)) - 0.5
 
-        bufferCount = int(round(recordsPerCapture / recordsPerBuffer))
+#        bufferCount = int(round(recordsPerCapture / recordsPerBuffer))
+        bufferCount = 4
         buffers = []
         for i in range(bufferCount):
             buffers.append(DMABuffer(bytesPerSample, bytesPerBuffer))
@@ -483,12 +487,13 @@ class Alazar987x(DllInstrument):
         return answerDemod, answerTrace
 
     def get_traces(self, timeaftertrig, recordsPerCapture,
-                   recordsPerBuffer, average):
-
+                   recordsPerBuffer, average, decimation):
+#        print("records per buffer" + str(recordsPerBuffer))
+#        print("records per capture" + str(recordsPerCapture))
         board = self._dll.GetBoardBySystemID(1, 1)()
 
         # Number of samples per record: must be divisible by 32
-        samplesPerSec = 1000000000.0
+        samplesPerSec = 1000000000.0/decimation
         samplesPerTrace = samplesPerSec*timeaftertrig
         if samplesPerTrace % 32 == 0:
             samplesPerRecord = int(samplesPerTrace)
@@ -509,6 +514,7 @@ class Alazar987x(DllInstrument):
         bytesPerBuffer = int(bytesPerRecord * recordsPerBuffer*channel_number)
 
         bufferCount = 4
+        print(bytesPerBuffer*4)
         buffers = []
         for i in range(bufferCount):
             buffers.append(DMABuffer(bytesPerSample, bytesPerBuffer))
@@ -546,6 +552,7 @@ class Alazar987x(DllInstrument):
 
         dataA = np.empty((recordsPerCapture, samplesPerRecord))
         dataB = np.empty((recordsPerCapture, samplesPerRecord))
+#        print(len(dataA))
 
         buffersCompleted = 0
         while buffersCompleted < buffersPerAcquisition:
@@ -560,7 +567,7 @@ class Alazar987x(DllInstrument):
             buffersCompleted += 1
 
             self._dll.PostAsyncBuffer(board, buffer.addr, buffer.size_bytes)
-
+ 
         self._dll.AbortAsyncRead(board)
 
         for buffer in buffers:
@@ -612,7 +619,8 @@ class Alazar987x(DllInstrument):
         bitsPerSample = 8
         code = (1 << (bitsPerSample - 1)) - 0.5
 
-        bufferCount = int(round(recordsPerCapture / recordsPerBuffer))
+#        bufferCount = int(round(recordsPerCapture / recordsPerBuffer))
+        bufferCount = 4
         buffers = []
         for i in range(bufferCount):
             buffers.append(DMABuffer(bytesPerSample, bytesPerBuffer))

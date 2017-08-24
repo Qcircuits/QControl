@@ -664,6 +664,78 @@ class RootSequence(Sequence):
             if self.time_constrained:
                 kwargs['sequence_duration'] = duration
             return self.context.compile_sequence(pulses, **kwargs)
+            
+            
+    def compile_loop(self, use_context=True):
+        """ Compile a sequence to useful format.
+
+        Parameters
+        ---------------
+        use_context : bool, optional
+            Should the context compile the pulse sequence.
+
+        Returns
+        -----------
+        result : bool
+            Flag indicating whether or not the compilation succeeded.
+
+        args : iterable
+            Objects depending on the result and use_context flag.
+            In case of failure: tuple
+                - a set of the entries whose values where never found and a
+                dict of the errors which occured during compilation.
+            In case of success:
+                - a flat list of Pulse if use_context is False
+                - a context dependent result otherwise.
+
+        """
+        missings = set()
+        errors = {}
+        root_vars = self.external_vars.copy()
+
+        # Local vars computation.
+        for name, formula in self.local_vars.iteritems():
+            if name not in self._evaluated_vars:
+                try:
+                    val = eval_entry(formula, root_vars, missings)
+                    self._evaluated_vars[name] = val
+                except Exception as e:
+                    errors['root_' + name] = repr(e)
+
+        root_vars.update(self._evaluated_vars)
+
+        if self.time_constrained:
+            try:
+                duration = eval_entry(self.sequence_duration, root_vars,
+                                      missings)
+                root_vars['sequence_end'] = duration
+            except Exception as e:
+                errors['root_seq_duration'] = repr(e)
+
+        res, pulses = self._compile_items(root_vars, root_vars,
+                                          missings, errors)
+
+        if not res:
+            return False, (missings, errors), None
+
+        if self.time_constrained:
+            err = [p for p in pulses if p.stop > duration]
+
+            if err:
+                mess = cleandoc('''The stop time of the following pulses {}
+                        is larger than the duration of the sequence.''')
+                ind = [p.index for p in err]
+                errors['Root-stop'] = mess.format(ind)
+                return False, (missings, errors), None
+
+        if not use_context:
+            return True, pulses, None
+
+        else:
+            kwargs = {}
+            if self.time_constrained:
+                kwargs['sequence_duration'] = duration
+            return self.context.compile_loop(pulses, **kwargs)
 
     def get_bindable_vars(self):
         """ Access the list of bindable vars for the sequence.
