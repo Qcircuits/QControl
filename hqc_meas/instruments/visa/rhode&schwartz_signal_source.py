@@ -146,4 +146,39 @@ class RhodeSchwartzSignalGenerator(VisaInstrument):
                         switch_on_off method''').format(value), 80)
             raise VisaTypeError(mess)
 
+    @instrument_property
+    @secure_communication()
+    def pm_state(self):
+        """Pulse modulation getter method
+#         """
+        pm_state = self.ask_for_values('SOURce:PULM:STATE?')
+        if pm_state is not None:
+            return bool(pm_state[0])
+        else:
+            mes = 'Signal generator did not return its pulse modulation state'
+            raise InstrIOError(mes)
+
+    @pm_state.setter
+    @secure_communication()
+    def pm_state(self, value):
+        """Pulse modulation setter method.
+#         """
+        on = re.compile('on', re.IGNORECASE)
+        off = re.compile('off', re.IGNORECASE)
+        if on.match(value) or value == 1:
+            self.write('SOURce:PULM:STATE ON')
+            if self.ask('SOURce:PULM:STATE?') != '1':
+                raise InstrIOError(cleandoc('''Instrument did not set correctly
+                                        the pulse modulation state'''))
+        elif off.match(value) or value == 0:
+            self.write('SOURce:PULM:STATE OFF')
+            if self.ask('SOURce:PULM:STATE?') != '0':
+                raise InstrIOError(cleandoc('''Instrument did not set correctly
+                                        the pulse modulation state'''))
+        else:
+            mess = fill(cleandoc('''The invalid value {} was sent to
+                        switch_on_off method''').format(value), 80)
+            raise VisaTypeError(mess)
+
+
 DRIVERS = {'RhodeSchwartzSGMA': RhodeSchwartzSignalGenerator}

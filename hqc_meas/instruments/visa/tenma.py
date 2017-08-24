@@ -83,19 +83,19 @@ class Tenma72_2535(VisaInstrument):
 
 
     @instrument_property
-    #@secure_communication()
+    @secure_communication()
     def voltage(self):
         """Voltage getter method. NB: does not check the current function.
         """
-        self._driver.write('VSET1?')
-        voltage = self._driver.read(5)
-        if voltage is not None:
-            return float(voltage)
+        self._driver.write("VSET1?")
+        volt = self._driver.read(5)
+        if volt is not None:
+            return float(volt)
         else:
             raise InstrIOError('Instrument did not return the voltage')
 
     @voltage.setter
-    #@secure_communication()
+    @secure_communication()
     def voltage(self, set_point):
         """Voltage setter method. NB: does not check the current function.
         """

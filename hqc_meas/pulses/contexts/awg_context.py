@@ -85,6 +85,8 @@ class AWGContext(BaseContext):
         for pulse in pulses:
 
             waveform = pulse.waveform
+			# ZL
+			#waveform = np.ones(len(waveform), dtype=np.int8)
             channel = pulse.channel[:3]
             channeltype = pulse.channel[4:]
 

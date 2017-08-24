@@ -515,13 +515,13 @@ class GetMarkerPosition(InstrumentTask):
     """Determine the frequency of the marker
 
     """
-    
+
     tracelist = Str('1,1').tag(pref=True)
 
     driver_list = ['AgilentPNA','RhodeandSchwarzVNA']
 
-    has_view = True    
-    
+    has_view = True
+
     task_database_entries = set_default({'markerfreq': 1.0})
 
     def perform(self):
@@ -532,14 +532,14 @@ class GetMarkerPosition(InstrumentTask):
         traces = self.tracelist.split(';')
         if not self.driver:
             self.start_driver()
-        
+
 
         for i in range(1,30):
             if str(i)+',' in self.tracelist:
                 self.average_channel(i)
 
-        c_nb, t_nb = traces[0].split(',')        
-        self.write_in_database('markerfreq', 
+        c_nb, t_nb = traces[0].split(',')
+        self.write_in_database('markerfreq',
                                self.get_marker(int(c_nb), int(t_nb)))
 
     def average_channel(self, channelnb):

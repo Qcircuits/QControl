@@ -39,7 +39,7 @@ class SetDCVoltageTask(InterfaceableTaskMixin, InstrumentTask):
     loopable = True
     task_database_entries = set_default({'voltage': 0.01})
 
-    driver_list = ['YokogawaGS200', 'Yokogawa7651']
+    driver_list = ['YokogawaGS200', 'Yokogawa7651', 'Tenma72_2535']
 
     def check(self, *args, **kwargs):
         """

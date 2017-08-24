@@ -130,6 +130,38 @@ enamldef RFSetOnOffView(BaseInstrumentView): view:
             entries_updater << task.accessible_database_entries
             tool_tip = EVALUATER_TOOLTIP
 
+enamldef RFSetModulationView(BaseInstrumentView): view:
+
+    attr in_loop : bool = False
+
+    title << task.task_name
+    constraints = [factory(auto_grid_layout),
+                   driv.width == prof.width]
+
+    Label:
+        text = 'Driver'
+    ObjectCombo: driv:
+        items << sorted(drivers)
+        selected := task.selected_driver
+
+    Label:
+        text = 'Instr'
+    ObjectCombo: prof:
+        items << sorted(profiles)
+        selected := task.selected_profile
+
+    Conditional:
+        condition = not in_loop
+        Label:
+            text = 'Output'
+        QtLineCompleter:
+            hug_width = 'ignore'
+            text := task.switch
+            entries_updater << task.accessible_database_entries
+            tool_tip = EVALUATER_TOOLTIP
+
+
 TASK_VIEW_MAPPING = {'SetRFFrequencyTask': RFFrequencyView,
                      'SetRFPowerTask': RFPowerView,
-                     'SetRFOnOffTask': RFSetOnOffView}
+                     'SetRFOnOffTask': RFSetOnOffView,
+                     'SetRFModulationTask': RFSetModulationView}
